@@ -1,0 +1,19 @@
+%h1 Listing portadas
+
+%table
+  %tr
+    %th Imagen
+    %th
+    %th
+    %th
+
+  - @portadas.each do |portada|
+    %tr
+      %td= portada.imagen
+      %td= link_to 'Show', portada
+      %td= link_to 'Edit', edit_portada_path(portada)
+      %td= link_to 'Destroy', portada, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Portada', new_portada_path

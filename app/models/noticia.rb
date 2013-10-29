@@ -1,6 +1,9 @@
 class Noticia < ActiveRecord::Base
-  extend Friendlyid
   attr_accessible :contenido, :foto, :titulo, :video
-  friendly_id :titulo, use: :slugged
 
+  extend FriendlyId
+
+  friendly_id :titulo, use: :slugged
+  
+  mount_uploader :foto, PortadaUploader
 end

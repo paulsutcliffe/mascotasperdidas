@@ -1,4 +1,7 @@
 Mascotasperdidas::Application.routes.draw do
+  resources :portadas
+
+
   resources :publicaciones
 
 

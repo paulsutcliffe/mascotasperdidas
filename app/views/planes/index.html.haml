@@ -1,0 +1,23 @@
+%h1 Listing planes
+
+%table
+  %tr
+    %th Dias
+    %th Precio
+    %th Descripcion
+    %th
+    %th
+    %th
+
+  - @planes.each do |plan|
+    %tr
+      %td= plan.dias
+      %td= plan.precio
+      %td= plan.descripcion
+      %td= link_to 'Show', plan
+      %td= link_to 'Edit', edit_plan_path(plan)
+      %td= link_to 'Destroy', plan, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Plan', new_plan_path

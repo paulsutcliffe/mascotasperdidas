@@ -1,0 +1,49 @@
+%h1 Listing publicaciones
+
+%table
+  %tr
+    %th Tipo
+    %th Animal
+    %th Raza
+    %th Provincia
+    %th Ciudad
+    %th Distrito
+    %th Direccion
+    %th Referencia
+    %th Recompensa
+    %th Fecha
+    %th Descripcion
+    %th Lat
+    %th Lng
+    %th Portada
+    %th Edad
+    %th Sexo
+    %th
+    %th
+    %th
+
+  - @publicaciones.each do |publicacion|
+    %tr
+      %td= publicacion.tipo
+      %td= publicacion.animal
+      %td= publicacion.raza
+      %td= publicacion.provincia
+      %td= publicacion.ciudad
+      %td= publicacion.distrito
+      %td= publicacion.direccion
+      %td= publicacion.referencia
+      %td= publicacion.recompensa
+      %td= publicacion.fecha
+      %td= publicacion.descripcion
+      %td= publicacion.lat
+      %td= publicacion.lng
+      %td= publicacion.portada
+      %td= publicacion.edad
+      %td= publicacion.sexo
+      %td= link_to 'Show', publicacion
+      %td= link_to 'Edit', edit_publicacion_path(publicacion)
+      %td= link_to 'Destroy', publicacion, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Publicacion', new_publicacion_path

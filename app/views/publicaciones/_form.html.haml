@@ -1,0 +1,58 @@
+= form_for @publicacion do |f|
+  - if @publicacion.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@publicacion.errors.count, "error")} prohibited this publicacion from being saved:"
+      %ul
+        - @publicacion.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :tipo
+    = f.text_field :tipo
+  .field
+    = f.label :animal
+    = f.text_field :animal
+  .field
+    = f.label :raza
+    = f.text_field :raza
+  .field
+    = f.label :provincia
+    = f.text_field :provincia
+  .field
+    = f.label :ciudad
+    = f.text_field :ciudad
+  .field
+    = f.label :distrito
+    = f.text_field :distrito
+  .field
+    = f.label :direccion
+    = f.text_field :direccion
+  .field
+    = f.label :referencia
+    = f.text_area :referencia
+  .field
+    = f.label :recompensa
+    = f.text_field :recompensa
+  .field
+    = f.label :fecha
+    = f.date_select :fecha
+  .field
+    = f.label :descripcion
+    = f.text_area :descripcion
+  .field
+    = f.label :lat
+    = f.text_field :lat
+  .field
+    = f.label :lng
+    = f.text_field :lng
+  .field
+    = f.label :portada
+    = f.text_field :portada
+  .field
+    = f.label :edad
+    = f.text_field :edad
+  .field
+    = f.label :sexo
+    = f.text_field :sexo
+  .actions
+    = f.submit 'Save'

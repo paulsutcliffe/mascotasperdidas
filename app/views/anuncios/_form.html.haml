@@ -1,0 +1,16 @@
+= form_for @anuncio do |f|
+  - if @anuncio.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@anuncio.errors.count, "error")} prohibited this anuncio from being saved:"
+      %ul
+        - @anuncio.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :imagen
+    = f.text_field :imagen
+  .actions
+    = f.submit 'Save'

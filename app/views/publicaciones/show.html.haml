@@ -1,0 +1,54 @@
+%p#notice= notice
+
+%p
+  %b Tipo:
+  = @publicacion.tipo
+%p
+  %b Animal:
+  = @publicacion.animal
+%p
+  %b Raza:
+  = @publicacion.raza
+%p
+  %b Provincia:
+  = @publicacion.provincia
+%p
+  %b Ciudad:
+  = @publicacion.ciudad
+%p
+  %b Distrito:
+  = @publicacion.distrito
+%p
+  %b Direccion:
+  = @publicacion.direccion
+%p
+  %b Referencia:
+  = @publicacion.referencia
+%p
+  %b Recompensa:
+  = @publicacion.recompensa
+%p
+  %b Fecha:
+  = @publicacion.fecha
+%p
+  %b Descripcion:
+  = @publicacion.descripcion
+%p
+  %b Lat:
+  = @publicacion.lat
+%p
+  %b Lng:
+  = @publicacion.lng
+%p
+  %b Portada:
+  = @publicacion.portada
+%p
+  %b Edad:
+  = @publicacion.edad
+%p
+  %b Sexo:
+  = @publicacion.sexo
+
+= link_to 'Edit', edit_publicacion_path(@publicacion)
+\|
+= link_to 'Back', publicaciones_path

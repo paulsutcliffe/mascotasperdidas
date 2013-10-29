@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Dias:
+  = @plan.dias
+%p
+  %b Precio:
+  = @plan.precio
+%p
+  %b Descripcion:
+  = @plan.descripcion
+
+= link_to 'Edit', edit_plan_path(@plan)
+\|
+= link_to 'Back', planes_path

@@ -1,4 +1,46 @@
 Mascotasperdidas::Application.routes.draw do
+  resources :publicaciones
+
+
+  resources :distritos
+
+
+  resources :ciudades
+
+
+  resources :provincias
+
+
+  resources :razas
+
+
+  resources :animales
+
+
+  resources :planes
+
+
+  resources :imagenes
+
+
+  resources :anuncios
+
+
+  resources :contactos
+
+
+  resources :noticias
+
+
+  resources :testimonios
+
+
+  resources :videos
+
+
+  resources :slides
+
+
   root to: 'inicio#index'
 
   get "inicio/index"

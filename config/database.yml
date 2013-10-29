@@ -1,0 +1,22 @@
+defaults: &defaults
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password: chimpace99
+
+development:
+  database: mascotasperdidas_development
+  socket: /tmp/mysql.sock
+  <<: *defaults
+
+test: &test
+  database: mascotasperdidas_test
+  socket: /tmp/mysql.sock
+  <<: *defaults
+
+production:
+  host: localhost
+  database: mascotasperdidas_production
+  <<: *defaults

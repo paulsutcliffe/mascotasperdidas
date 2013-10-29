@@ -5,6 +5,7 @@ FactoryGirl.define do
     tipo "MyString"
     animal "MyString"
     raza "MyString"
+    nombre "MyString"
     provincia "MyString"
     ciudad "MyString"
     distrito "MyString"

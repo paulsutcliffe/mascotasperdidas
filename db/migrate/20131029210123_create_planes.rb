@@ -4,6 +4,7 @@ class CreatePlanes < ActiveRecord::Migration
       t.integer :dias
       t.float :precio
       t.text :descripcion
+      t.integer :publicacion_id
 
       t.timestamps
     end

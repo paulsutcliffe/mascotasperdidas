@@ -5,6 +5,7 @@ class CreateNoticias < ActiveRecord::Migration
       t.text :contenido
       t.string :foto
       t.string :video
+      t.string :slug
 
       t.timestamps
     end

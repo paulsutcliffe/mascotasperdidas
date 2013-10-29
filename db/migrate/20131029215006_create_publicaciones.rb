@@ -4,6 +4,7 @@ class CreatePublicaciones < ActiveRecord::Migration
       t.string :tipo
       t.string :animal
       t.string :raza
+      t.string :nombre
       t.string :provincia
       t.string :ciudad
       t.string :distrito
@@ -17,6 +18,8 @@ class CreatePublicaciones < ActiveRecord::Migration
       t.string :portada
       t.string :edad
       t.string :sexo
+      t.integer :usuario_id
+      t.string :slug
 
       t.timestamps
     end

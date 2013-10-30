@@ -1,23 +1,24 @@
+#coding: utf-8
 # Read about factories at https://github.com/thoughtbot/factory_girl
-
+require 'faker'
 FactoryGirl.define do
   factory :publicacion do
-    tipo "MyString"
-    animal "MyString"
-    raza "MyString"
-    nombre "MyString"
-    provincia "MyString"
-    ciudad "MyString"
-    distrito "MyString"
-    direccion "MyString"
-    referencia "MyText"
-    recompensa 1.5
+    tipo { ["Perdido", "Encontrado"].sample }
+    animal "Perro"
+    raza "Dalmata"
+    nombre { ["Fido", "Bobby", "lucky"].sample }
+    provincia
+    ciudad 
+    distrito 
+    direccion { Faker::Address.street_address }
+    referencia { Faker::Lorem.sentence }
+    recompensa 0
     fecha "2013-10-29"
-    descripcion "MyText"
-    lat 1.5
-    lng 1.5
-    portada "MyString"
-    edad "MyString"
-    sexo "MyString"
+    descripcion { Faker::Lorem.paragraph }
+    lat { Faker::Address.latitude }
+    lng { Faker::Address.longitude }
+    portada { Rack::Test::UploadedFile.new(File.join(Rails.root,'spec','support','imagen.jpg'))}
+    edad { ["2 meses", "3 años"].sample }
+    sexo { ["Macho", "Hembra"].sample }
   end
 end

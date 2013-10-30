@@ -3,7 +3,7 @@ class CreateAnimales < ActiveRecord::Migration
     create_table :animales do |t|
       t.string :nombre
       t.integer :publicacion_id
-
+      t.string :slug
       t.timestamps
     end
   end

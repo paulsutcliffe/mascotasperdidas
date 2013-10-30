@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :anuncio do
-    link "MyString"
-    imagen "MyString"
+    link { Faker::Internet.url}
+    imagen { Rack::Test::UploadedFile.new(File.join(Rails.root,'spec','support','imagen.jpg'))}
   end
 end

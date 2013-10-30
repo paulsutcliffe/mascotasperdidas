@@ -1,4 +1,8 @@
 Mascotasperdidas::Application.routes.draw do
+  devise_for :usuarios
+
+  devise_for :admins
+
   resources :portadas
 
 

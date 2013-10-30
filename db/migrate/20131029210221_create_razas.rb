@@ -3,6 +3,7 @@ class CreateRazas < ActiveRecord::Migration
     create_table :razas do |t|
       t.string :nombre
       t.integer :animal_id
+      t.string :slug
 
       t.timestamps
     end

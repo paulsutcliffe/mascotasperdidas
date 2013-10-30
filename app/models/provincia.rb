@@ -3,5 +3,9 @@ class Provincia < ActiveRecord::Base
 
   extend FriendlyId
 
+  belongs_to :usuario
+  belongs_to :publicacion
+  has_many :ciudades
+
   friendly_id :nombre, use: :slugged
 end

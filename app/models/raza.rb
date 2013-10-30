@@ -3,5 +3,7 @@ class Raza < ActiveRecord::Base
 
   extend FriendlyId
 
+  belongs_to :animal
+
   friendly_id :nombre, use: :slugged
 end

@@ -4,6 +4,7 @@ class CreateProvincias < ActiveRecord::Migration
       t.string :nombre
       t.integer :publicacion_id
       t.integer :usuario_id
+      t.string :slug
 
       t.timestamps
     end

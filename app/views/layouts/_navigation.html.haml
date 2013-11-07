@@ -1,0 +1,23 @@
+%ul.nav
+  %li= link_to 'Publicar', publicaciones_path
+  %li= link_to 'Contacto', contactos_path
+  %li= link_to 'Blog', noticias_path
+- if current_admin
+  %ul.nav
+    %li= link_to 'Inicio', root_path
+    %li= link_to 'Portada', portadas_path
+    %li= link_to 'Publicacion', publicaciones_path
+    %li= link_to 'Distrito', distritos_path
+    %li= link_to 'Ciudad', ciudades_path
+    %li= link_to 'Provincia', provincias_path
+    %li= link_to 'Raza', razas_path
+    %li= link_to 'Animal', animales_path
+    %li= link_to 'Planes', planes_path
+    %li= link_to 'Anuncio', anuncios_path
+    %li= link_to 'Contacto', contactos_path
+    %li= link_to 'Noticias', noticias_path
+    %li= link_to 'Testimonio', testimonios_path
+    %li= link_to 'Videos', videos_path
+    %li= link_to 'Slides', slides_path
+
+

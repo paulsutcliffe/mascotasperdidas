@@ -7,7 +7,7 @@ FactoryGirl.define do
     animal "Perro"
     raza "Dalmata"
     nombre { ["Fido", "Bobby", "lucky"].sample }
-    provincia
+    provincia 
     ciudad 
     distrito 
     direccion { Faker::Address.street_address }

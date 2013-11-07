@@ -2,6 +2,6 @@
 require 'faker'
 FactoryGirl.define do
   factory :video do
-    link { Faker::Internet.url }
+    link { 'http://vimeo.com/78058789' }
   end
 end

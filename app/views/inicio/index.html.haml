@@ -1,2 +1,18 @@
 %h1 Inicio#index
 %p Find me in app/views/inicio/index.html.haml
+
+= @video.link_html
+
+%br
+
+- @publicaciones.each do |publicacion|
+  = image_tag publicacion.portada_url(:regular)
+
+%br
+
+- @slides.each do |slide|
+  = image_tag slide.imagen_url(:full)
+
+%br
+
+= image_tag @testimonio.foto_url(:thumb)

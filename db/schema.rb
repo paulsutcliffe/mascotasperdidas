@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(:version => 20131030204802) do
 
   create_table "imagenes", :force => true do |t|
     t.string   "imagen"
-    t.string   "publicacion_id"
+    t.integer  "publicacion_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

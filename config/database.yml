@@ -4,7 +4,7 @@ defaults: &defaults
   reconnect: false
   pool: 5
   username: root
-  password: chimpace99
+  password: chimpance99
 
 development:
   database: mascotasperdidas_development

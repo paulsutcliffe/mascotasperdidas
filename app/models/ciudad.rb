@@ -6,7 +6,7 @@ class Ciudad < ActiveRecord::Base
   belongs_to :usuario
   belongs_to :publicacion
   belongs_to :provincia
-  has_many :distrito
+  has_many :distritos
 
   friendly_id :nombre, use: :slugged
 end

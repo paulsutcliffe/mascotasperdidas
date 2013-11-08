@@ -5,6 +5,6 @@ FactoryGirl.define do
     titulo { Faker::Lorem.sentence}
     contenido { Faker::Lorem.paragraph}
     foto { Rack::Test::UploadedFile.new(File.join(Rails.root,'spec','support','imagen.jpg'))}
-    video { Faker::Internet.url}
+    video { 'http://vimeo.com/78058789' }
   end
 end

@@ -1,4 +1,4 @@
-%h1 Listing publicaciones
+%h1 Publicaciones
 
 %table
   %tr
@@ -29,9 +29,9 @@
       %td= publicacion.animal
       %td= publicacion.raza
       %td= publicacion.nombre
-      %td= publicacion.provincia
-      %td= publicacion.ciudad
-      %td= publicacion.distrito
+      %td= publicacion.provincia.nombre
+      %td= publicacion.ciudad.nombre
+      %td= publicacion.distrito.nombre
       %td= publicacion.direccion
       %td= publicacion.referencia
       %td= publicacion.recompensa
@@ -39,12 +39,13 @@
       %td= publicacion.descripcion
       %td= publicacion.lat
       %td= publicacion.lng
-      %td= publicacion.portada
+      %td= image_tag publicacion.portada_url(:regular)
       %td= publicacion.edad
       %td= publicacion.sexo
-      %td= link_to 'Show', publicacion
-      %td= link_to 'Edit', edit_publicacion_path(publicacion)
-      %td= link_to 'Destroy', publicacion, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Ver mas', publicacion
+      - if current_admin
+        %td= link_to 'Editar', edit_publicacion_path(publicacion)
+        %td= link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estas seguro?' }
 
 %br
 

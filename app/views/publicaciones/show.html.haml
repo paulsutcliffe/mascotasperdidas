@@ -1,6 +1,9 @@
 %p#notice= notice
 
 %p
+  %b Portada:
+  = image_tag @publicacion.portada_url(:full)
+%p
   %b Tipo:
   = @publicacion.tipo
 %p
@@ -14,13 +17,13 @@
   = @publicacion.nombre
 %p
   %b Provincia:
-  = @publicacion.provincia
+  = @publicacion.provincia.nombre
 %p
   %b Ciudad:
-  = @publicacion.ciudad
+  = @publicacion.ciudad.nombre
 %p
   %b Distrito:
-  = @publicacion.distrito
+  = @publicacion.distrito.nombre
 %p
   %b Direccion:
   = @publicacion.direccion
@@ -37,14 +40,16 @@
   %b Descripcion:
   = @publicacion.descripcion
 %p
+  %b Imágenes
+  - @publicacion.imagenes.each do |imagen|
+    = image_tag imagen.imagen_url(:thumb)
+
+%p
   %b Lat:
   = @publicacion.lat
 %p
   %b Lng:
   = @publicacion.lng
-%p
-  %b Portada:
-  = @publicacion.portada
 %p
   %b Edad:
   = @publicacion.edad
@@ -52,6 +57,4 @@
   %b Sexo:
   = @publicacion.sexo
 
-= link_to 'Edit', edit_publicacion_path(@publicacion)
-\|
-= link_to 'Back', publicaciones_path
+= link_to 'Regrasar', publicaciones_path

@@ -3,5 +3,6 @@ require 'faker'
 FactoryGirl.define do
   factory :imagen do
     imagen { Rack::Test::UploadedFile.new(File.join(Rails.root,'spec','support','imagen.jpg'))}
+    publicacion
   end
 end

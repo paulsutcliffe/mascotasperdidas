@@ -1,18 +1,16 @@
-%p#notice= notice
+%h1= @noticia.titulo
 
-%p
-  %b Titulo:
-  = @noticia.titulo
 %p
   %b Contenido:
   = @noticia.contenido
 %p
   %b Foto:
-  = @noticia.foto
+  = image_tag @noticia.foto_url(:regular)
 %p
   %b Video:
-  = @noticia.video
+  = @noticia.video_html
 
-= link_to 'Edit', edit_noticia_path(@noticia)
-\|
-= link_to 'Back', noticias_path
+- if current_admin
+  = link_to 'Editar', edit_noticia_path(@noticia)
+
+= link_to 'Regresar', noticias_path

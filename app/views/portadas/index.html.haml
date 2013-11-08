@@ -1,5 +1,6 @@
 %h1 Listing portadas
 
+= link_to 'Nueva Portada', new_portada_path
 %table
   %tr
     %th Imagen
@@ -9,11 +10,9 @@
 
   - @portadas.each do |portada|
     %tr
-      %td= portada.imagen
-      %td= link_to 'Show', portada
-      %td= link_to 'Edit', edit_portada_path(portada)
-      %td= link_to 'Destroy', portada, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= image_tag portada.imagen_url(:regular) 
+      %td= link_to 'Editar', edit_portada_path(portada)
+      %td= link_to 'Eliminar', portada, :method => :delete, :data => { :confirm => '¿Estas seguro?' }
 
 %br
 
-= link_to 'New Portada', new_portada_path

@@ -1,4 +1,4 @@
-= form_for @portada do |f|
+= form_for @portada, :html => { :multipart => true } do |f|
   - if @portada.errors.any?
     #error_explanation
       %h2= "#{pluralize(@portada.errors.count, "error")} prohibited this portada from being saved:"
@@ -8,6 +8,6 @@
 
   .field
     = f.label :imagen
-    = f.text_field :imagen
+    = f.file_field :imagen
   .actions
     = f.submit 'Save'

@@ -1,5 +1,7 @@
 %h1 Publicaciones
 
+= link_to 'Nueva Publicacion', new_publicacion_path
+
 %table
   %tr
     %th Tipo
@@ -16,7 +18,7 @@
     %th Descripcion
     %th Lat
     %th Lng
-    %th Portada
+    %th Imagen
     %th Edad
     %th Sexo
     %th
@@ -39,7 +41,7 @@
       %td= publicacion.descripcion
       %td= publicacion.lat
       %td= publicacion.lng
-      %td= image_tag publicacion.portada_url(:regular)
+      %td= image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.any?
       %td= publicacion.edad
       %td= publicacion.sexo
       %td= link_to 'Ver mas', publicacion
@@ -49,4 +51,3 @@
 
 %br
 
-= link_to 'New Publicacion', new_publicacion_path

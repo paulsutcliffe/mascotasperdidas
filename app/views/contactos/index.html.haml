@@ -1,4 +1,4 @@
-%h1 Listing contactos
+%h1 Mensajes
 
 %table
   %tr
@@ -7,7 +7,7 @@
     %th Telefono
     %th Email
     %th Mensaje
-    %th
+    %th Fecha
     %th
     %th
 
@@ -18,10 +18,9 @@
       %td= contacto.telefono
       %td= contacto.email
       %td= contacto.mensaje
-      %td= link_to 'Show', contacto
-      %td= link_to 'Edit', edit_contacto_path(contacto)
-      %td= link_to 'Destroy', contacto, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= l contacto.created_at, format: :short
+      %td= link_to 'Ver mas', contacto
+      %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Esta Seguro?' }
 
 %br
 
-= link_to 'New Contacto', new_contacto_path

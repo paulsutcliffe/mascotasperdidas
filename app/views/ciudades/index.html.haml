@@ -1,4 +1,6 @@
-%h1 Listing ciudades
+%h1 Ciudades
+
+= link_to 'Nueva Ciudad', new_ciudad_path
 
 %table
   %tr
@@ -10,10 +12,8 @@
   - @ciudades.each do |ciudad|
     %tr
       %td= ciudad.nombre
-      %td= link_to 'Show', ciudad
-      %td= link_to 'Edit', edit_ciudad_path(ciudad)
-      %td= link_to 'Destroy', ciudad, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Editar', edit_ciudad_path(ciudad)
+      %td= link_to 'Eliminar', ciudad, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
 
 %br
 
-= link_to 'New Ciudad', new_ciudad_path

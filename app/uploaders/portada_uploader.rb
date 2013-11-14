@@ -33,11 +33,11 @@ class PortadaUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :full do
-    process :resize_to_fit => [1600, 400]
+    process :resize_to_fill => [1600, 400]
   end
 
    version :regular do
-    process :resize_to_fit => [620, 155]
+    process :resize_to_fill => [620, 155]
   end
 
 

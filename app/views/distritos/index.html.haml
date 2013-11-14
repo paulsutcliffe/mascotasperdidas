@@ -1,4 +1,6 @@
-%h1 Listing distritos
+%h1 Distritos
+
+= link_to 'Nuevo Distrito', new_distrito_path
 
 %table
   %tr
@@ -10,9 +12,8 @@
   - @distritos.each do |distrito|
     %tr
       %td= distrito.nombre
-      %td= link_to 'Show', distrito
-      %td= link_to 'Edit', edit_distrito_path(distrito)
-      %td= link_to 'Destroy', distrito, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Editar', edit_distrito_path(distrito)
+      %td= link_to 'Eliminar', distrito, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
 
 %br
 

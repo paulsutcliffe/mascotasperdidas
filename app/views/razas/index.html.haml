@@ -1,4 +1,8 @@
-%h1 Listing razas
+%h1 Razas
+
+= link_to 'Nueva Raza', new_raza_path
+
+%br
 
 %table
   %tr
@@ -10,10 +14,8 @@
   - @razas.each do |raza|
     %tr
       %td= raza.nombre
-      %td= link_to 'Show', raza
-      %td= link_to 'Edit', edit_raza_path(raza)
-      %td= link_to 'Destroy', raza, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Editar', edit_raza_path(raza)
+      %td= link_to 'Eliminar', raza, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
 
 %br
 
-= link_to 'New Raza', new_raza_path

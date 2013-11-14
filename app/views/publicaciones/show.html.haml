@@ -44,12 +44,8 @@
   - @publicacion.imagenes.each do |imagen|
     = image_tag imagen.imagen_url(:thumb)
 
-%p
-  %b Lat:
-  = @publicacion.lat
-%p
-  %b Lng:
-  = @publicacion.lng
+= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@publicacion.lat}%2C#{@publicacion.lng}" 
+
 %p
   %b Edad:
   = @publicacion.edad
@@ -57,4 +53,4 @@
   %b Sexo:
   = @publicacion.sexo
 
-= link_to 'Regrasar', publicaciones_path
+= link_to 'Regresar', publicaciones_path

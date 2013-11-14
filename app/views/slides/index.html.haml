@@ -1,4 +1,6 @@
-%h1 Listing slides
+%h1 Slides
+
+= link_to 'Nuevo Slide', new_slide_path
 
 %table
   %tr
@@ -6,16 +8,13 @@
     %th Imagen
     %th
     %th
-    %th
 
   - @slides.each do |slide|
     %tr
       %td= slide.link
-      %td= slide.imagen
-      %td= link_to 'Show', slide
-      %td= link_to 'Edit', edit_slide_path(slide)
-      %td= link_to 'Destroy', slide, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= image_tag slide.imagen_url(:full)
+      %td= link_to 'Editar', edit_slide_path(slide)
+      %td= link_to 'Eliminar', slide, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
 
 %br
 
-= link_to 'New Slide', new_slide_path

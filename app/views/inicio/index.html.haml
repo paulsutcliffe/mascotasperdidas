@@ -1,12 +1,15 @@
 %h1 Inicio#index
 %p Find me in app/views/inicio/index.html.haml
 
+- @portadas.each do |portada|
+  = image_tag portada.imagen_url(:full)
+
 = @video.link_html
 
 %br
 
 - @publicaciones.each do |publicacion|
-  = image_tag publicacion.portada_url(:regular)
+  = image_tag publicacion.imagenes.first.imagen_url(:thumb)
 
 %br
 

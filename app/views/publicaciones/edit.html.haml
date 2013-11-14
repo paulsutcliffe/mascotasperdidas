@@ -1,7 +1,10 @@
+- content_for :javascript do
+  = javascript_include_tag 'nested_form.js'
+
 %h1 Editing publicacion
 
 = render 'form'
 
-= link_to 'Show', @publicacion
+= link_to 'Ver Mas', @publicacion
 \|
-= link_to 'Back', publicaciones_path
+= link_to 'Regresar', publicaciones_path

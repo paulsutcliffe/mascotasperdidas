@@ -15,8 +15,6 @@ FactoryGirl.define do
     recompensa 0
     fecha "2013-10-29"
     descripcion { Faker::Lorem.paragraph }
-    lat { Faker::Address.latitude }
-    lng { Faker::Address.longitude }
     portada { Rack::Test::UploadedFile.new(File.join(Rails.root,'spec','support','imagen.jpg'))}
     edad { ["2 meses", "3 años"].sample }
     sexo { ["Macho", "Hembra"].sample }

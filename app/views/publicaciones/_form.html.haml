@@ -19,21 +19,6 @@
     = f.label :nombre
     = f.text_field :nombre
   .field
-    = f.label :provincia
-    = f.select :provincia, Provincia.all.collect { |provincia| [ provincia.nombre, provincia ] }
-  .field
-    = f.label :ciudad
-    = f.select :ciudad, Ciudad.all.collect { |ciudad| [ ciudad.nombre, ciudad ] }
-  .field
-    = f.label :distrito
-    = f.select :distrito, Distrito.all.collect { |distrito| [ distrito.nombre, distrito ] }
-  .field
-    = f.label :direccion
-    = f.text_field :direccion
-  .field
-    = f.label :referencia
-    = f.text_area :referencia
-  .field
     = f.label :recompensa
     = f.text_field :recompensa
   .field
@@ -60,4 +45,4 @@
     = f.label :sexo
     = f.select :sexo, Publicacion::SEXO.collect { |i| [i]}
   .actions
-    = f.submit 'Save'
+    = f.submit 'Guardar'

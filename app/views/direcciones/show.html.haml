@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Provincia:
+  = @direccion.provincia
+%p
+  %b Ciudad:
+  = @direccion.ciudad
+%p
+  %b Distrito:
+  = @direccion.distrito
+%p
+  %b Calle:
+  = @direccion.calle
+%p
+  %b Referencia:
+  = @direccion.referencia
+
+= link_to 'Edit', edit_direccion_path(@direccion)
+\|
+= link_to 'Back', direcciones_path

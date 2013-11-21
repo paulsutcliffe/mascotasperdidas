@@ -1,10 +1,8 @@
 class Ciudad < ActiveRecord::Base
-  attr_accessible :nombre
+  attr_accessible :nombre, :provincia_id
 
   extend FriendlyId
 
-  belongs_to :usuario
-  belongs_to :publicacion
   belongs_to :provincia
   has_many :distritos
 

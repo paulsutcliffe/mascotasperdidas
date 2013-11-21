@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030204802) do
+ActiveRecord::Schema.define(:version => 20131121202556) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -48,11 +48,10 @@ ActiveRecord::Schema.define(:version => 20131030204802) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "nombre"
-    t.integer  "usuario_id"
-    t.integer  "publicacion_id"
+    t.integer  "provincia_id"
     t.string   "slug"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "contactos", :force => true do |t|
@@ -65,13 +64,25 @@ ActiveRecord::Schema.define(:version => 20131030204802) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "distritos", :force => true do |t|
-    t.string   "nombre"
+  create_table "direcciones", :force => true do |t|
+    t.string   "provincia"
+    t.string   "ciudad"
+    t.string   "distrito"
+    t.string   "calle"
+    t.text     "referencia"
     t.integer  "usuario_id"
     t.integer  "publicacion_id"
-    t.string   "slug"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "distritos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "codigo_postal"
+    t.integer  "ciudad_id"
+    t.string   "slug"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "imagenes", :force => true do |t|
@@ -108,11 +119,9 @@ ActiveRecord::Schema.define(:version => 20131030204802) do
 
   create_table "provincias", :force => true do |t|
     t.string   "nombre"
-    t.integer  "publicacion_id"
-    t.integer  "usuario_id"
     t.string   "slug"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "publicaciones", :force => true do |t|

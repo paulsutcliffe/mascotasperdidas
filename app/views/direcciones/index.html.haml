@@ -1,0 +1,27 @@
+%h1 Listing direcciones
+
+%table
+  %tr
+    %th Provincia
+    %th Ciudad
+    %th Distrito
+    %th Calle
+    %th Referencia
+    %th
+    %th
+    %th
+
+  - @direcciones.each do |direccion|
+    %tr
+      %td= direccion.provincia
+      %td= direccion.ciudad
+      %td= direccion.distrito
+      %td= direccion.calle
+      %td= direccion.referencia
+      %td= link_to 'Show', direccion
+      %td= link_to 'Edit', edit_direccion_path(direccion)
+      %td= link_to 'Destroy', direccion, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Direccion', new_direccion_path

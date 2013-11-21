@@ -31,11 +31,11 @@
       %td= publicacion.animal
       %td= publicacion.raza
       %td= publicacion.nombre
-      %td= publicacion.provincia.nombre
-      %td= publicacion.ciudad.nombre
-      %td= publicacion.distrito.nombre
-      %td= publicacion.direccion
-      %td= publicacion.referencia
+      %td= publicacion.direccion.provincia.nombre
+      %td= publicacion.direccion.ciudad.nombre
+      %td= publicacion.direccion.distrito.nombre
+      %td= publicacion.direccion.calle
+      %td= publicacion.direccion.referencia
       %td= publicacion.recompensa
       %td= publicacion.fecha
       %td= publicacion.descripcion
@@ -51,3 +51,4 @@
 
 %br
 
+= link_to 'New Publicacion', new_publicacion_path

@@ -2,6 +2,6 @@
 require 'faker'
 FactoryGirl.define do
   factory :distrito do
-    nombre Faker::Address.postcode
+    nombre { Faker::Address.postcode }
   end
 end

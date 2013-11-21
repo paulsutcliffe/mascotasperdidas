@@ -1,0 +1,25 @@
+= form_for @direccion do |f|
+  - if @direccion.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@direccion.errors.count, "error")} prohibited this direccion from being saved:"
+      %ul
+        - @direccion.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :provincia
+    = f.select :provincia, Provincia.all.collect { |provincia| [ provincia.nombre, provincia ] }
+  .field
+    = f.label :ciudad
+    = f.select :ciudad, Ciudad.all.collect { |ciudad| [ ciudad.nombre, ciudad ] }
+  .field
+    = f.label :distrito
+    = f.select :distrito, Distrito.all.collect { |distrito| [ distrito.nombre, distrito]}
+  .field
+    = f.label :calle
+    = f.text_field :calle
+  .field
+    = f.label :referencia
+    = f.text_area :referencia
+  .actions
+    = f.submit 'Guardar'

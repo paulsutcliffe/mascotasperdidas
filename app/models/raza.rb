@@ -1,5 +1,5 @@
 class Raza < ActiveRecord::Base
-  attr_accessible :nombre
+  attr_accessible :nombre, :animal_id
 
   extend FriendlyId
 

@@ -1,54 +1,48 @@
-%h1 Publicaciones
+#region-publicaciones.container
 
-= link_to 'Nueva Publicacion', new_publicacion_path
+  .region
+    .region-title
+      %h1= page_title!('Listando publicaciones')
 
-%table
-  %tr
-    %th Tipo
-    %th Animal
-    %th Raza
-    %th Nombre
-    %th Provincia
-    %th Ciudad
-    %th Distrito
-    %th Direccion
-    %th Referencia
-    %th Recompensa
-    %th Fecha
-    %th Descripcion
-    %th Lat
-    %th Lng
-    %th Imagen
-    %th Edad
-    %th Sexo
-    %th
-    %th
-    %th
-
-  - @publicaciones.each do |publicacion|
-    %tr
-      %td= publicacion.tipo
-      %td= publicacion.animal
-      %td= publicacion.raza
-      %td= publicacion.nombre
-      %td= publicacion.direccion.provincia.nombre
-      %td= publicacion.direccion.ciudad.nombre
-      %td= publicacion.direccion.distrito.nombre
-      %td= publicacion.direccion.calle
-      %td= publicacion.direccion.referencia
-      %td= publicacion.recompensa
-      %td= publicacion.fecha
-      %td= publicacion.descripcion
-      %td= publicacion.lat
-      %td= publicacion.lng
-      %td= image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.any?
-      %td= publicacion.edad
-      %td= publicacion.sexo
-      %td= link_to 'Ver mas', publicacion
+    .region
       - if current_admin
-        %td= link_to 'Editar', edit_publicacion_path(publicacion)
-        %td= link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estas seguro?' }
+        .admin-control
+          = link_to 'Crear Publicacion', new_publicacion_path, class: 'btn btn-primary'
 
-%br
+      .table-responsive
+        %table.table
+          %tr
+            %th Tipo
+            %th Animal
+            %th Raza
+            %th Nombre
+            %th Recompensa
+            %th Fecha
+            %th Descripcion
+            %th Lat
+            %th Lng
+            %th Portada
+            %th Edad
+            %th Sexo
+            %th
+            %th
+            %th
 
-= link_to 'New Publicacion', new_publicacion_path
+          - @publicaciones.each do |publicacion|
+            %tr
+              %td= publicacion.tipo
+              %td= publicacion.animal
+              %td= publicacion.raza
+              %td= publicacion.nombre
+              %td= publicacion.recompensa
+              %td= publicacion.fecha
+              %td= publicacion.descripcion
+              %td= publicacion.lat
+              %td= publicacion.lng
+              %td= publicacion.portada
+              %td= publicacion.edad
+              %td= publicacion.sexo
+              %td= link_to 'Ver', publicacion, class: 'btn btn-info'
+              - if current_admin
+                %td= link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
+                %td= link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

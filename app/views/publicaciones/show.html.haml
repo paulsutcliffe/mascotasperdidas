@@ -1,56 +1,48 @@
-%p#notice= notice
+#region-publicaciones.container
+  .region
+    .region-title
+      %h1= page_title!('publicacion')
 
-%p
-  %b Portada:
-  = image_tag @publicacion.portada_url(:full)
-%p
-  %b Tipo:
-  = @publicacion.tipo
-%p
-  %b Animal:
-  = @publicacion.animal
-%p
-  %b Raza:
-  = @publicacion.raza
-%p
-  %b Nombre:
-  = @publicacion.nombre
-%p
-  %b Provincia:
-  = @publicacion.provincia.nombre
-%p
-  %b Ciudad:
-  = @publicacion.ciudad.nombre
-%p
-  %b Distrito:
-  = @publicacion.distrito.nombre
-%p
-  %b Direccion:
-  = @publicacion.direccion
-%p
-  %b Referencia:
-  = @publicacion.referencia
-%p
-  %b Recompensa:
-  = @publicacion.recompensa
-%p
-  %b Fecha:
-  = @publicacion.fecha
-%p
-  %b Descripcion:
-  = @publicacion.descripcion
-%p
-  %b Imágenes
-  - @publicacion.imagenes.each do |imagen|
-    = image_tag imagen.imagen_url(:thumb)
+  .region
+    %p
+      %b Tipo:
+      = @publicacion.tipo
+    %p
+      %b Animal:
+      = @publicacion.animal
+    %p
+      %b Raza:
+      = @publicacion.raza
+    %p
+      %b Nombre:
+      = @publicacion.nombre
+    %p
+      %b Recompensa:
+      = @publicacion.recompensa
+    %p
+      %b Fecha:
+      = @publicacion.fecha
+    %p
+      %b Descripcion:
+      = @publicacion.descripcion
+    %p
+      %b Lat:
+      = @publicacion.lat
+    %p
+      %b Lng:
+      = @publicacion.lng
+    %p
+      %b Portada:
+      = @publicacion.portada
+    %p
+      %b Edad:
+      = @publicacion.edad
+    %p
+      %b Sexo:
+      = @publicacion.sexo
 
-= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@publicacion.lat}%2C#{@publicacion.lng}" 
-
-%p
-  %b Edad:
-  = @publicacion.edad
-%p
-  %b Sexo:
-  = @publicacion.sexo
-
-= link_to 'Regresar', publicaciones_path
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_publicacion_path(@publicacion), class: 'btn btn-success'
+    = link_to 'Regresar', publicaciones_path, class: 'btn btn-warning'

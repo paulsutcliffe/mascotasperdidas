@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121202556) do
+ActiveRecord::Schema.define(:version => 20131121230642) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -129,11 +129,6 @@ ActiveRecord::Schema.define(:version => 20131121202556) do
     t.string   "animal"
     t.string   "raza"
     t.string   "nombre"
-    t.string   "provincia"
-    t.string   "ciudad"
-    t.string   "distrito"
-    t.string   "direccion"
-    t.text     "referencia"
     t.float    "recompensa"
     t.date     "fecha"
     t.text     "descripcion"
@@ -142,8 +137,8 @@ ActiveRecord::Schema.define(:version => 20131121202556) do
     t.string   "portada"
     t.string   "edad"
     t.string   "sexo"
-    t.integer  "usuario_id"
     t.string   "slug"
+    t.integer  "usuario_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -176,9 +171,6 @@ ActiveRecord::Schema.define(:version => 20131121202556) do
     t.string   "apellido"
     t.string   "dni"
     t.string   "telefono"
-    t.string   "provincia"
-    t.string   "ciudad"
-    t.string   "distrito"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"

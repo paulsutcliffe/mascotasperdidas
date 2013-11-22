@@ -12,21 +12,6 @@ Mascotasperdidas::Application.routes.draw do
   resources :publicaciones
 
 
-  resources :distritos
-
-
-  resources :ciudades
-
-
-  resources :provincias
-
-
-  resources :razas
-
-
-  resources :animales
-
-
   resources :planes
 
 

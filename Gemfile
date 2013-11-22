@@ -11,7 +11,7 @@ gem 'mysql2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  
+
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -45,7 +45,7 @@ gem "compass-rails", :group => :assets
 gem "rails_layout", :group => :development
 gem "rvm-capistrano"
 gem "haml"
-gem "haml-rails"
+gem "scaffold-bootstrap3"
 gem "will_paginate"
 gem "inherited_resources"
 gem "page_title_helper"

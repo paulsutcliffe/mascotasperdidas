@@ -1,5 +1,5 @@
 class Publicacion < ActiveRecord::Base
-  attr_accessible :animal, :ciudad, :descripcion, :distrito, :edad, :fecha, :lat, :lng, :nombre, :portada, :provincia, :raza, :recompensa, :referencia, :sexo, :tipo, :imagenes_attributes
+  attr_accessible :animal, :descripcion, :edad, :fecha, :lat, :lng, :nombre, :portada, :raza, :recompensa, :sexo, :tipo, :imagenes_attributes
 
   extend FriendlyId
 
@@ -15,10 +15,10 @@ class Publicacion < ActiveRecord::Base
   SEXO = ['Macho','Hembra']
 
   def titulo
-    "#{nombre} #{animal} #{raza} #{tipo} en #{distrito}"
+    "#{nombre} #{animal} #{raza} #{tipo}"
   end
 
   friendly_id :titulo, use: :slugged
-  
+
   mount_uploader :portada, PortadaUploader
 end

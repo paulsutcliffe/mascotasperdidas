@@ -5,9 +5,6 @@ class DeviseCreateUsuarios < ActiveRecord::Migration
       t.string :apellido
       t.string :dni
       t.string :telefono
-      t.string :provincia
-      t.string :ciudad
-      t.string :distrito
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""

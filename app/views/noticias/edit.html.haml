@@ -1,7 +1,18 @@
-%h1 Editing noticia
+- page_title!('Editando noticia')
 
-= render 'form'
+#region-noticias.container
 
-= link_to 'Show', @noticia
-\|
-= link_to 'Back', noticias_path
+  .region
+    .region-title
+      %h1
+        Editando
+        %b
+          noticia
+
+  .region
+    = render 'form'
+
+  .region
+    .admin-controls
+      = link_to 'Ver', @noticia, class: 'btn btn-info'
+      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

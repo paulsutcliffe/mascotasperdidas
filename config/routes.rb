@@ -15,9 +15,6 @@ Mascotasperdidas::Application.routes.draw do
   resources :planes
 
 
-  resources :imagenes
-
-
   resources :anuncios
 
 

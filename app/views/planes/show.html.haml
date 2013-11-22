@@ -1,15 +1,21 @@
-%p#notice= notice
+#region-planes.container
+  .region
+    .region-title
+      %h1= page_title!('plan')
 
-%p
-  %b Dias:
-  = @plan.dias
-%p
-  %b Precio:
-  = @plan.precio
-%p
-  %b Descripcion:
-  = @plan.descripcion
+  .region
+    %p
+      %b Dias:
+      = @plan.dias
+    %p
+      %b Precio:
+      = @plan.precio
+    %p
+      %b Descripcion:
+      = @plan.descripcion
 
-= link_to 'Edit', edit_plan_path(@plan)
-\|
-= link_to 'Back', planes_path
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_plan_path(@plan), class: 'btn btn-success'
+    = link_to 'Regresar', planes_path, class: 'btn btn-warning'

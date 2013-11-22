@@ -1,16 +1,24 @@
-%h1= @noticia.titulo
+#region-noticias.container
+  .region
+    .region-title
+      %h1= page_title!('noticia')
 
-%p
-  %b Contenido:
-  = @noticia.contenido
-%p
-  %b Foto:
-  = image_tag @noticia.foto_url(:regular)
-%p
-  %b Video:
-  = @noticia.video_html
+  .region
+    %p
+      %b Titulo:
+      = @noticia.titulo
+    %p
+      %b Contenido:
+      = @noticia.contenido
+    %p
+      %b Foto:
+      = @noticia.foto
+    %p
+      %b Video:
+      = @noticia.video
 
-- if current_admin
-  = link_to 'Editar', edit_noticia_path(@noticia)
-
-= link_to 'Regresar', noticias_path
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_noticia_path(@noticia), class: 'btn btn-success'
+    = link_to 'Regresar', noticias_path, class: 'btn btn-warning'

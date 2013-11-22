@@ -1,24 +1,30 @@
-%h1 Listing planes
+#region-planes.container
 
-= link_to 'Nuevo Plan', new_plan_path
+  .region
+    .region-title
+      %h1= page_title!('Listando planes')
 
-%table
-  %tr
-    %th Dias
-    %th Precio
-    %th Descripcion
-    %th
-    %th
-    %th
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Plan', new_plan_path, class: 'btn btn-primary'
 
-  - @planes.each do |plan|
-    %tr
-      %td= plan.dias
-      %td= plan.precio
-      %td= plan.descripcion
-      %td= link_to 'Ver mas', plan
-      %td= link_to 'Editar', edit_plan_path(plan)
-      %td= link_to 'Eliminar', plan, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+      .table-responsive
+        %table.table
+          %tr
+            %th Dias
+            %th Precio
+            %th Descripcion
+            %th
+            %th
+            %th
 
-%br
-
+          - @planes.each do |plan|
+            %tr
+              %td= plan.dias
+              %td= plan.precio
+              %td= plan.descripcion
+              %td= link_to 'Ver', plan, class: 'btn btn-info'
+              - if current_admin
+                %td= link_to 'Editar', edit_plan_path(plan), class: 'btn btn-success'
+                %td= link_to 'Eliminar', plan, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

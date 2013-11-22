@@ -1,27 +1,34 @@
-%h1 Listing direcciones
+#region-direcciones.container
 
-%table
-  %tr
-    %th Provincia
-    %th Ciudad
-    %th Distrito
-    %th Calle
-    %th Referencia
-    %th
-    %th
-    %th
+  .region
+    .region-title
+      %h1= page_title!('Listando direcciones')
 
-  - @direcciones.each do |direccion|
-    %tr
-      %td= direccion.provincia
-      %td= direccion.ciudad
-      %td= direccion.distrito
-      %td= direccion.calle
-      %td= direccion.referencia
-      %td= link_to 'Show', direccion
-      %td= link_to 'Edit', edit_direccion_path(direccion)
-      %td= link_to 'Destroy', direccion, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Direccion', new_direccion_path, class: 'btn btn-primary'
 
-%br
+      .table-responsive
+        %table.table
+          %tr
+            %th Provincia
+            %th Ciudad
+            %th Distrito
+            %th Calle
+            %th Referencia
+            %th
+            %th
+            %th
 
-= link_to 'New Direccion', new_direccion_path
+          - @direcciones.each do |direccion|
+            %tr
+              %td= direccion.provincia
+              %td= direccion.ciudad
+              %td= direccion.distrito
+              %td= direccion.calle
+              %td= direccion.referencia
+              %td= link_to 'Ver', direccion, class: 'btn btn-info'
+              - if current_admin
+                %td= link_to 'Editar', edit_direccion_path(direccion), class: 'btn btn-success'
+                %td= link_to 'Eliminar', direccion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

@@ -1,21 +1,28 @@
-%h1 Anuncios
+#region-anuncios.container
 
-= link_to 'Nuevo Anuncio', new_anuncio_path
+  .region
+    .region-title
+      %h1= page_title!('Listando anuncios')
 
-%table
-  %tr
-    %th Link
-    %th Imagen
-    %th
-    %th
-    %th
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Anuncio', new_anuncio_path, class: 'btn btn-primary'
 
-  - @anuncios.each do |anuncio|
-    %tr
-      %td= anuncio.link
-      %td= image_tag anuncio.imagen_url(:thumb)
-      %td= link_to 'Editar', edit_anuncio_path(anuncio)
-      %td= link_to 'Eliminar', anuncio, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+      .table-responsive
+        %table.table
+          %tr
+            %th Link
+            %th Imagen
+            %th
+            %th
+            %th
 
-%br
-
+          - @anuncios.each do |anuncio|
+            %tr
+              %td= anuncio.link
+              %td= anuncio.imagen
+              %td= link_to 'Ver', anuncio, class: 'btn btn-info'
+              - if current_admin
+                %td= link_to 'Editar', edit_anuncio_path(anuncio), class: 'btn btn-success'
+                %td= link_to 'Eliminar', anuncio, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

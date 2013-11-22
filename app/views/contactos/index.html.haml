@@ -1,26 +1,32 @@
-%h1 Mensajes
+#region-contactos.container
 
-%table
-  %tr
-    %th Nombre
-    %th Apellido
-    %th Telefono
-    %th Email
-    %th Mensaje
-    %th Fecha
-    %th
-    %th
+  .region
+    .region-title
+      %h1= page_title!('Listando contactos')
 
-  - @contactos.each do |contacto|
-    %tr
-      %td= contacto.nombre
-      %td= contacto.apellido
-      %td= contacto.telefono
-      %td= contacto.email
-      %td= contacto.mensaje
-      %td= l contacto.created_at, format: :short
-      %td= link_to 'Ver mas', contacto
-      %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Esta Seguro?' }
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Contacto', new_contacto_path, class: 'btn btn-primary'
 
-%br
+      .table-responsive
+        %table.table
+          %tr
+            %th Nombre
+            %th Telefono
+            %th Email
+            %th Mensaje
+            %th
+            %th
+            %th
 
+          - @contactos.each do |contacto|
+            %tr
+              %td= contacto.nombre
+              %td= contacto.telefono
+              %td= contacto.email
+              %td= contacto.mensaje
+              %td= link_to 'Ver', contacto, class: 'btn btn-info'
+              - if current_admin
+                %td= link_to 'Editar', edit_contacto_path(contacto), class: 'btn btn-success'
+                %td= link_to 'Eliminar', contacto, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

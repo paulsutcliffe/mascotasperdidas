@@ -1,0 +1,18 @@
+#region-anuncios.container
+  .region
+    .region-title
+      %h1= page_title!('anuncio')
+
+  .region
+    %p
+      %b Link:
+      = @anuncio.link
+    %p
+      %b Imagen:
+      = @anuncio.imagen
+
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_anuncio_path(@anuncio), class: 'btn btn-success'
+    = link_to 'Regresar', anuncios_path, class: 'btn btn-warning'

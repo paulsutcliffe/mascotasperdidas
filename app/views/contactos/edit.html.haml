@@ -1,18 +1,18 @@
-- page_title!('Editando anuncio')
+- page_title!('Editando contacto')
 
-#region-anuncios.container
+#region-contactos.container
 
   .region
     .region-title
       %h1
         Editando
         %b
-          anuncio
+          contacto
 
   .region
     = render 'form'
 
   .region
     .admin-controls
-      = link_to 'Ver', @anuncio, class: 'btn btn-info'
+      = link_to 'Ver', @contacto, class: 'btn btn-info'
       = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

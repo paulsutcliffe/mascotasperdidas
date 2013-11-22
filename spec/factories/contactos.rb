@@ -2,8 +2,7 @@
 require 'faker'
 FactoryGirl.define do
   factory :contacto do
-    nombre { Faker::Name.first_name}
-    apellido { Faker::Name.last_name}
+    nombre { Faker::Name.name}
     telefono { Faker::PhoneNumber.phone_number}
     email { Faker::Internet.email}
     mensaje { Faker::Lorem.paragraph}

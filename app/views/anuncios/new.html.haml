@@ -1,5 +1,17 @@
-%h1 New anuncio
+- page_title!('Editando anuncio')
 
-= render 'form'
+#region-anuncios.container
 
-= link_to 'Back', anuncios_path
+  .region
+    .region-title
+      %h1
+        Creando
+        %b
+          anuncio
+
+  .region
+    = render 'form'
+
+  .region
+    .admin-controls
+      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

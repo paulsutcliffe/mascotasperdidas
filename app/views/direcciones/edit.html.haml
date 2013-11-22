@@ -1,7 +1,18 @@
-%h1 Editing direccion
+- page_title!('Editando direccion')
 
-= render 'form'
+#region-direcciones.container
 
-= link_to 'Show', @direccion
-\|
-= link_to 'Back', direcciones_path
+  .region
+    .region-title
+      %h1
+        Editando
+        %b
+          direccion
+
+  .region
+    = render 'form'
+
+  .region
+    .admin-controls
+      = link_to 'Ver', @direccion, class: 'btn btn-info'
+      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

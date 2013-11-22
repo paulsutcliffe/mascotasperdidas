@@ -1,25 +1,32 @@
-%h1 Blog
+#region-noticias.container
 
-- if current_admin
-  = link_to 'Nueva Noticia', new_noticia_path
-%table
-  %tr
-    %th Titulo
-    %th Foto
-    %th Contenido
-    %th
-    %th
-    %th
+  .region
+    .region-title
+      %h1= page_title!('Listando noticias')
 
-  - @noticias.each do |noticia|
-    %tr
-      %td= noticia.titulo
-      %td= image_tag noticia.foto_url(:regular)
-      %td= truncate(noticia.contenido, length: 25)
-      %td= link_to 'Leer más', noticia
-      -if current_admin
-        %td= link_to 'Editar', edit_noticia_path(noticia)
-        %td= link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Noticia', new_noticia_path, class: 'btn btn-primary'
 
-%br
+      .table-responsive
+        %table.table
+          %tr
+            %th Titulo
+            %th Contenido
+            %th Foto
+            %th Video
+            %th
+            %th
+            %th
 
+          - @noticias.each do |noticia|
+            %tr
+              %td= noticia.titulo
+              %td= noticia.contenido
+              %td= noticia.foto
+              %td= noticia.video
+              %td= link_to 'Ver', noticia, class: 'btn btn-info'
+              - if current_admin
+                %td= link_to 'Editar', edit_noticia_path(noticia), class: 'btn btn-success'
+                %td= link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

@@ -1,19 +1,25 @@
-%h1 Inicio#index
-%p Find me in app/views/inicio/index.html.haml
+%h1 Inicio
+%h2 Portada
 
 - @portadas.each do |portada|
   = image_tag portada.imagen_url(:full)
 
+%h2 Titulo del video testimonial
 = @video.link_html
 
 %br
+
+%h2 Ultimas mascotas perdidas
 
 - @publicaciones.each do |publicacion|
   = image_tag publicacion.imagenes.first.imagen_url(:thumb)
 
 %br
 
+%h2 Banner
 - @slides.each do |slide|
   = image_tag slide.imagen_url(:full)
 
+%h2 Testimonio
 = image_tag @testimonio.foto_url(:thumb)
+= @testimonio.contenido

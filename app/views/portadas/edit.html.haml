@@ -1,5 +1,18 @@
-%h1 Editing portada
+- page_title!('Editando portada')
 
-= render 'form'
+#region-portadas.container
 
-= link_to 'Regresar', portadas_path
+  .region
+    .region-title
+      %h1
+        Editando
+        %b
+          portada
+
+  .region
+    = render 'form'
+
+  .region
+    .admin-controls
+      = link_to 'Ver', @portada, class: 'btn btn-info'
+      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

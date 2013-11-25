@@ -1,14 +1,15 @@
 - if current_admin
   %ul.nav
-    %li= link_to 'Portada', portadas_path
-    %li= link_to 'Publicacion', publicaciones_path
+    %li= link_to 'Portadas', portadas_path
+    %li= link_to 'Publicaciones', publicaciones_path
     %li= link_to 'Planes', planes_path
-    %li= link_to 'Anuncio', anuncios_path
-    %li= link_to 'Contacto', contactos_path
+    %li= link_to 'Anuncios', anuncios_path
+    %li= link_to 'Mensajes', contactos_path
     %li= link_to 'Noticias', noticias_path
-    %li= link_to 'Testimonio', testimonios_path
+    %li= link_to 'Testimonios', testimonios_path
     %li= link_to 'Videos', videos_path
-    %li= link_to 'Cerrar sesion', destroy_admin_session_path, :method => :delete
+    %li= link_to 'Slides', slides_path
+    %li= link_to 'Cerrar Sesión', destroy_admin_session_path, :method => :delete
 
 - else
   %ul.nav
@@ -18,7 +19,7 @@
 
 - if current_usuario
   %ul.nav
-    %li= link_to 'Cerrar session', destroy_usuario_session_path, :method => :delete
+    %li= link_to 'Cerrar Sesión', destroy_usuario_session_path, :method => :delete
 
 - else
   %ul.nav

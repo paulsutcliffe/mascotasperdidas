@@ -1,18 +1,24 @@
-%h1 Videos
+#region-videos.container
 
-= link_to 'Nuevo Video', new_video_path
+  .region
+    .region-title
+      %h1= page_title!('Listando videos')
 
-%table
-  %tr
-    %th Link
-    %th
-    %th
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Video', new_video_path, class: 'btn btn-primary'
 
-  - @videos.each do |video|
-    %tr
-      %td= video.link_html
-      %td= link_to 'Editar', edit_video_path(video)
-      %td= link_to 'Eliminar', video, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+      .table-responsive
+        %table.table
+          %tr
+            %th Link
+            %th
+            %th
 
-%br
-
+          - @videos.each do |video|
+            %tr
+              %td= video.link_html
+              - if current_admin
+                %td= link_to 'Editar', edit_video_path(video), class: 'btn btn-success'
+                %td= link_to 'Eliminar', video, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

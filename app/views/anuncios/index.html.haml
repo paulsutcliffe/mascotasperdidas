@@ -21,8 +21,7 @@
           - @anuncios.each do |anuncio|
             %tr
               %td= anuncio.link
-              %td= anuncio.imagen
-              %td= link_to 'Ver', anuncio, class: 'btn btn-info'
+              %td= image_tag anuncio.imagen_url(:thumb)
               - if current_admin
                 %td= link_to 'Editar', edit_anuncio_path(anuncio), class: 'btn btn-success'
                 %td= link_to 'Eliminar', anuncio, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

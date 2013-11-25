@@ -1,0 +1,15 @@
+#region-portadas.container
+  .region
+    .region-title
+      %h1= page_title!('portada')
+
+  .region
+    %p
+      %b Imagen:
+      = @portada.imagen
+
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_portada_path(@portada), class: 'btn btn-success'
+    = link_to 'Regresar', portadas_path, class: 'btn btn-warning'

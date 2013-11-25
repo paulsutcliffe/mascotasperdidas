@@ -8,6 +8,6 @@ class Noticia < ActiveRecord::Base
   mount_uploader :foto, PortadaUploader
 
   auto_html_for :video do
-    vimeo(:width => 940, :height => 400)
+    vimeo(:width => 620, :height => 349)
   end
 end

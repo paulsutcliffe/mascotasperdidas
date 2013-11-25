@@ -1,13 +1,14 @@
-= form_for @portada, :html => { :multipart => true } do |f|
+= form_for @portada, :html => { class: 'form-horizontal', role: 'form', :multipart => true } do |f|
   - if @portada.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@portada.errors.count, "error")} prohibited this portada from being saved:"
+      %h2= "#{pluralize(@portada.errors.count, "error")}"
       %ul
         - @portada.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :imagen
-    = f.file_field :imagen
+  .form-group
+    = f.label :imagen, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.file_field :imagen, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Guardar', class: 'btn btn-default'

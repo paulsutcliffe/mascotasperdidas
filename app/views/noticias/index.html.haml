@@ -24,8 +24,8 @@
             %tr
               %td= noticia.titulo
               %td= noticia.contenido
-              %td= noticia.foto
-              %td= noticia.video
+              %td= image_tag noticia.foto_url(:regular)
+              %td= noticia.video_html
               %td= link_to 'Ver', noticia, class: 'btn btn-info'
               - if current_admin
                 %td= link_to 'Editar', edit_noticia_path(noticia), class: 'btn btn-success'

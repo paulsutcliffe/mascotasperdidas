@@ -3,7 +3,7 @@ class InicioController < ApplicationController
     @portadas = Portada.limit(3)
     @publicaciones = Publicacion.limit(6)
     @slides = Slide.all
-    @testimonio = Testimonio.first
+    @testimonio = Testimonio.random
     @video = Video.first
   end
 end

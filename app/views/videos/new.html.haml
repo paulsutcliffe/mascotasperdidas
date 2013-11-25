@@ -1,5 +1,17 @@
-%h1 New video
+- page_title!('Editando video')
 
-= render 'form'
+#region-videos.container
 
-= link_to 'Back', videos_path
+  .region
+    .region-title
+      %h1
+        Creando
+        %b
+          video
+
+  .region
+    = render 'form'
+
+  .region
+    .admin-controls
+      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

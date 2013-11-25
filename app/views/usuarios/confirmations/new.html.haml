@@ -1,0 +1,14 @@
+#region-admin.container
+
+  .region
+    .region-title
+      %h1= page_title!('Volver a Enviar Instrucciones de Confirmacion')
+  .region
+    = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
+  .form-group
+    = f.label :email, class: 'col-sm-2 control-label'
+    .col-sm.10
+      = f.email_field :email, :autofocus => true, class: 'col-sm-2 control-label'
+      = f.submit "Reenviar", class: 'btn btn-default'
+  = render "usuarios/shared/links"

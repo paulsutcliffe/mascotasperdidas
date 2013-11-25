@@ -1,9 +1,15 @@
-%p#notice= notice
+#region-videos.container
+  .region
+    .region-title
+      %h1= page_title!('video')
 
-%p
-  %b Link:
-  = @video.link
+  .region
+    %p
+      %b Link:
+      = @video.link
 
-= link_to 'Edit', edit_video_path(@video)
-\|
-= link_to 'Back', videos_path
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_video_path(@video), class: 'btn btn-success'
+    = link_to 'Regresar', videos_path, class: 'btn btn-warning'

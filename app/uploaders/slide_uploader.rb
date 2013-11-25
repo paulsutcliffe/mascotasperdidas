@@ -36,6 +36,11 @@ class SlideUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [940, 220]
   end
 
+  version :thumb do
+    process :resize_to_fill => [220, 51]
+  end
+
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list

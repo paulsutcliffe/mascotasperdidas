@@ -19,8 +19,6 @@
             %th Recompensa
             %th Fecha
             %th Descripcion
-            %th Lat
-            %th Lng
             %th Portada
             %th Edad
             %th Sexo
@@ -37,9 +35,7 @@
               %td= publicacion.recompensa
               %td= publicacion.fecha
               %td= publicacion.descripcion
-              %td= publicacion.lat
-              %td= publicacion.lng
-              %td= publicacion.portada
+              %td= image_tag publicacion.portada_url(:regular)
               %td= publicacion.edad
               %td= publicacion.sexo
               %td= link_to 'Ver', publicacion, class: 'btn btn-info'

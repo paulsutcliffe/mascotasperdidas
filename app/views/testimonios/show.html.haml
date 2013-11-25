@@ -1,0 +1,21 @@
+#region-testimonios.container
+  .region
+    .region-title
+      %h1= page_title!('testimonio')
+
+  .region
+    %p
+      %b Foto:
+      = @testimonio.foto
+    %p
+      %b Contenido:
+      = @testimonio.contenido
+    %p
+      %b Nombre:
+      = @testimonio.nombre
+
+  .region
+    - if current_admin
+      .admin-controls
+        = link_to 'Editar', edit_testimonio_path(@testimonio), class: 'btn btn-success'
+    = link_to 'Regresar', testimonios_path, class: 'btn btn-warning'

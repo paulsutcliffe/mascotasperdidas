@@ -1,23 +1,30 @@
-%h1 Testimonios
+#region-testimonios.container
 
-= link_to 'Nuevo Testimonio', new_testimonio_path
+  .region
+    .region-title
+      %h1= page_title!('Listando testimonios')
 
-%table
-  %tr
-    %th Foto
-    %th Contenido
-    %th Nombre
-    %th
-    %th
-    %th
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Testimonio', new_testimonio_path, class: 'btn btn-primary'
 
-  - @testimonios.each do |testimonio|
-    %tr
-      %td= image_tag testimonio.foto_url(:thumb)
-      %td= testimonio.contenido
-      %td= testimonio.nombre
-      %td= link_to 'Editar', edit_testimonio_path(testimonio)
-      %td= link_to 'Eliminar', testimonio, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+      .table-responsive
+        %table.table
+          %tr
+            %th Foto
+            %th Contenido
+            %th Nombre
+            %th Fecha
+            %th
+            %th
 
-%br
-
+          - @testimonios.each do |testimonio|
+            %tr
+              %td= image_tag testimonio.foto_url(:thumb)
+              %td= testimonio.contenido
+              %td= testimonio.nombre
+              %td= l testimonio.created_at, format: :short
+              - if current_admin
+                %td= link_to 'Editar', edit_testimonio_path(testimonio), class: 'btn btn-success'
+                %td= link_to 'Eliminar', testimonio, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

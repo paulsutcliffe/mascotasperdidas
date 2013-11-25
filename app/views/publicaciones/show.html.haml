@@ -26,14 +26,8 @@
       %b Descripcion:
       = @publicacion.descripcion
     %p
-      %b Lat:
-      = @publicacion.lat
-    %p
-      %b Lng:
-      = @publicacion.lng
-    %p
       %b Portada:
-      = @publicacion.portada
+      = image_tag @publicacion.portada_url(:regular)
     %p
       %b Edad:
       = @publicacion.edad

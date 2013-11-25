@@ -1,7 +1,18 @@
-%h1 Editing testimonio
+- page_title!('Editando testimonio')
 
-= render 'form'
+#region-testimonios.container
 
-= link_to 'Show', @testimonio
-\|
-= link_to 'Back', testimonios_path
+  .region
+    .region-title
+      %h1
+        Editando
+        %b
+          testimonio
+
+  .region
+    = render 'form'
+
+  .region
+    .admin-controls
+      = link_to 'Ver', @testimonio, class: 'btn btn-info'
+      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

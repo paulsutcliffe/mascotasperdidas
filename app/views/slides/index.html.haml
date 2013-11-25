@@ -1,20 +1,26 @@
-%h1 Slides
+#region-slides.container
 
-= link_to 'Nuevo Slide', new_slide_path
+  .region
+    .region-title
+      %h1= page_title!('Listando slides')
 
-%table
-  %tr
-    %th Link
-    %th Imagen
-    %th
-    %th
+    .region
+      - if current_admin
+        .admin-control
+          = link_to 'Crear Slide', new_slide_path, class: 'btn btn-primary'
 
-  - @slides.each do |slide|
-    %tr
-      %td= slide.link
-      %td= image_tag slide.imagen_url(:full)
-      %td= link_to 'Editar', edit_slide_path(slide)
-      %td= link_to 'Eliminar', slide, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+      .table-responsive
+        %table.table
+          %tr
+            %th Link
+            %th Imagen
+            %th
+            %th
 
-%br
-
+          - @slides.each do |slide|
+            %tr
+              %td= slide.link
+              %td= image_tag slide.imagen_url(:thumb)
+              - if current_admin
+                %td= link_to 'Editar', edit_slide_path(slide), class: 'btn btn-success'
+                %td= link_to 'Eliminar', slide, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

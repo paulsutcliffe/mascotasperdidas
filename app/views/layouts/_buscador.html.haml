@@ -1,0 +1,7 @@
+= form_tag resultado_de_busqueda_path, method: :get do
+  = select_tag :tipo, options_for_select(Publicacion::TIPOS.collect { |i| [i]}), :prompt => "Select something", class: 'form-control'
+  = select_tag :animal, options_for_select(Animal.all.collect { |animal| [animal.nombre]}), class: 'form-control'
+  = select_tag :raza, options_for_select(Raza.all.collect { |raza| [raza.nombre]}), class: 'form-control'
+  = select_tag :ciudad, options_for_select(Ciudad.all.collect { |ciudad| [ciudad.nombre]}), class: 'form-control'
+  = select_tag :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), class: 'form-control'
+  = submit_tag "BUSCAR", name: nil

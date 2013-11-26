@@ -14,6 +14,7 @@ class CreatePublicaciones < ActiveRecord::Migration
       t.string :edad
       t.string :sexo
       t.string :slug
+      t.string :status, :null => false, :default => "Pendiente"
       t.integer :usuario_id
 
       t.timestamps

@@ -11,6 +11,7 @@ class DireccionesController < InheritedResources::Base
   def create
     @direccion = @publicacion.build_direccion(params[:direccion])
     if @direccion.save
+      @publicacion.update_attribute(:status, 'Activa')
       redirect_to usuario_publicacion_path(@publicacion.usuario, @publicacion), :notice => "Se ha Creado Satisfactoriamente"
     else
       render :new

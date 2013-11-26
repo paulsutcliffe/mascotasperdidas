@@ -9,36 +9,5 @@
         .admin-control
           = link_to 'Crear Publicacion', new_publicacion_path, class: 'btn btn-primary'
 
-      .table-responsive
-        %table.table
-          %tr
-            %th Tipo
-            %th Animal
-            %th Raza
-            %th Nombre
-            %th Recompensa
-            %th Fecha
-            %th Descripcion
-            %th Portada
-            %th Edad
-            %th Sexo
-            %th
-            %th
-            %th
-
-          - @publicaciones.each do |publicacion|
-            %tr
-              %td= publicacion.tipo
-              %td= publicacion.animal
-              %td= publicacion.raza
-              %td= publicacion.nombre
-              %td= publicacion.recompensa
-              %td= publicacion.fecha
-              %td= publicacion.descripcion
-              %td= image_tag publicacion.portada_url(:regular)
-              %td= publicacion.edad
-              %td= publicacion.sexo
-              %td= link_to 'Ver', publicacion, class: 'btn btn-info'
-              - if current_admin or current_usuario
-                %td= link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
-                %td= link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+      #publicaciones
+        = render @publicaciones

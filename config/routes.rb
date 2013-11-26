@@ -1,6 +1,8 @@
 Mascotasperdidas::Application.routes.draw do
-  resources :direcciones
 
+  match '/publicaciones/resultado-de-busqueda' => 'publicaciones#resultado_de_busqueda', via: :get, as: 'resultado_de_busqueda'
+
+  resources :direcciones
 
   devise_for :usuarios, :path => "usuarios", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
 
@@ -38,7 +40,6 @@ Mascotasperdidas::Application.routes.draw do
 
 
   resources :slides
-
 
   root to: 'inicio#index'
 

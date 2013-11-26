@@ -137,9 +137,10 @@ ActiveRecord::Schema.define(:version => 20131125195519) do
     t.string   "edad"
     t.string   "sexo"
     t.string   "slug"
+    t.string   "status",      :default => "Pendiente", :null => false
     t.integer  "usuario_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "razas", :force => true do |t|

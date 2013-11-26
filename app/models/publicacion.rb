@@ -18,6 +18,14 @@ class Publicacion < ActiveRecord::Base
     "#{nombre} #{animal} #{raza} #{tipo}"
   end
 
+  def self.buscar(busqueda)
+    if busqueda
+      find(:all, :conditions => ['tipo LIKE ?', "#{busqueda}"])
+    else
+      find(:all)
+    end
+  end
+
   friendly_id :titulo, use: :slugged
 
   mount_uploader :portada, PortadaUploader

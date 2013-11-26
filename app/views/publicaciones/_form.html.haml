@@ -1,4 +1,4 @@
-= form_for @publicacion, :html => { class: 'form-horizontal', role: 'form', :multipart => true } do |f|
+= nested_form_for [@usuario, @publicacion], :html => { class: 'form-horizontal', role: 'form', :multipart => true } do |f|
   - if @publicacion.errors.any?
     #error_explanation
       %h2= "#{pluralize(@publicacion.errors.count, "error")}"
@@ -9,15 +9,15 @@
   .form-group
     = f.label :tipo, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :tipo, class: 'form-control'
+      = f.select :tipo, Publicacion::TIPOS.collect { |i| [i]}, class: 'form-control'
   .form-group
     = f.label :animal, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :animal, class: 'form-control'
+      = f.select :animal, options_for_select(Animal.all.collect { |animal| [animal.nombre]}), class: 'form-control'
   .form-group
     = f.label :raza, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :raza, class: 'form-control'
+      = f.select :raza, options_for_select(Raza.all.collect { |raza| [raza.nombre]}), class: 'form-control'
   .form-group
     = f.label :nombre, class: 'col-sm-2 control-label'
     .col-sm-10
@@ -37,7 +37,15 @@
   .form-group
     = f.label :portada, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.file_field :portada, class: 'form-control'
+      = f.file_field :portada
+      .field
+  .form-group
+    = f.label 'Imágenes', class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.fields_for :imagenes do |imagen_form|
+        = imagen_form.file_field :imagen
+        = imagen_form.link_to_remove "Eliminar Imagen", class: 'btn btn-danger'
+      = f.link_to_add "Agregar Imagen", :imagenes, class: 'btn btn-primary'
   .form-group
     = f.label :edad, class: 'col-sm-2 control-label'
     .col-sm-10
@@ -45,6 +53,6 @@
   .form-group
     = f.label :sexo, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :sexo, class: 'form-control'
+      = f.select :sexo, Publicacion::SEXO.collect { |i| [i]}, class: 'form-control'
   .actions
     = f.submit 'Guardar', class: 'btn btn-default'

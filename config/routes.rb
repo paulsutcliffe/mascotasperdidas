@@ -8,7 +8,14 @@ Mascotasperdidas::Application.routes.draw do
 
   resources :portadas
 
-  
+  resources :usuarios do
+    resources :publicaciones
+  end
+
+  resources :publicaciones do
+    resources :direcciones
+  end
+
   resources :publicaciones
 
 

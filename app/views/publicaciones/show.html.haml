@@ -29,11 +29,31 @@
       %b Portada:
       = image_tag @publicacion.portada_url(:regular)
     %p
+      %b Fotos:
+      - @publicacion.imagenes.each do |imagen|
+        = image_tag imagen.imagen_url(:thumb)
+    %p
       %b Edad:
       = @publicacion.edad
     %p
       %b Sexo:
       = @publicacion.sexo
+    %p
+      %b Provincia:
+      = @publicacion.direccion.provincia
+    %p
+      %b Ciudad:
+      = @publicacion.direccion.ciudad
+    %p
+      %b Distrito:
+      = @publicacion.direccion.distrito
+    %p
+      %b Calle:
+      = @publicacion.direccion.calle
+    %p
+      %b Referencia:
+      = @publicacion.direccion.referencia
+
 
   .region
     - if current_admin

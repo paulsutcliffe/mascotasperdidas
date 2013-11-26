@@ -2,7 +2,7 @@ class Publicacion < ActiveRecord::Base
   attr_accessible :animal, :descripcion, :edad, :fecha, :lat, :lng, :nombre, :portada, :raza, :recompensa, :sexo, :tipo, :imagenes_attributes
 
   extend FriendlyId
-
+  belongs_to :usuario
   has_many :imagenes
   has_one :direccion
   has_one :plan

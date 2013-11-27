@@ -41,9 +41,8 @@ Mascotasperdidas::Application.routes.draw do
 
   resources :slides
 
-  root to: 'inicio#index'
+  root to: 'construccion#index'
 
-  get "inicio/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,11 +2,11 @@
 .navbar-default .navbar-nav > li > a {background: $cyan; color: white; text-transform: uppercase; border-radius: 17px;
 padding: 3px 20px; text-transform: uppercase}
 
-.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {background: $black; color: white}
 
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {background: $black; color: white}
 
 
@@ -16,4 +16,16 @@ padding: 3px 20px; text-transform: uppercase}
 
 #carousel-generic {
   img {width: 100%}
+}
+
+#region-construccion {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 45px;
+    .img-responsive {
+      margin: 0 auto;
+    }
+    p { margin-top: 45px; }
 }

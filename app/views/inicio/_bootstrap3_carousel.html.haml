@@ -1,0 +1,29 @@
+
+#carousel-generic.carousel.portada
+
+  %ol.carousel-indicators
+    - @portadas.each_with_index do |portada, index|
+      - if index == 0
+        %li.active{:'data-target' => '#carousel-generic', :'data-portada-to' => index}
+      - else
+        %li{:'data-target' => '#carousel-generic', :'data-portada-to' => index}
+
+  .carousel-inner
+    - @portadas.each_with_index do |portada, index|
+      - if index == 0
+        .item.active
+          = image_tag portada.imagen_url(:full)
+          = admin_controls('Editar', edit_portada_path(portada), 'down')       
+          - if current_admin
+            = link_to 'Eliminar', portada, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+      - else
+        .item
+          = image_tag portada.imagen_url(:full)
+       
+          = admin_controls('Editar', edit_portada_path(portada), 'down')       
+          - if current_admin
+            = link_to 'Eliminar', portada, :method => :delete, :data => { :confirm => '¿Estas Seguro?' }
+
+  -#
+    = link_to content_tag(:span, '', class: 'icon-prev'), '#carousel-generic', :'data-portada' => 'prev'
+    = link_to content_tag(:span, '', class: 'icon-next'), '#carousel-generic', :'data-portada' => 'next'

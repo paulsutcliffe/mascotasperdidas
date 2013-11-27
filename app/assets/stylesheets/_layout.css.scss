@@ -1,0 +1,27 @@
+
+.region {@extend .row}
+.region-title,
+.region-inner {
+  @extend .col-lg-12;
+  @extend .col-md-12;
+  @extend .col-sm-12;
+  @extend .col-xs-12;
+}
+
+#main-header {
+  
+  #logo {
+    @extend .col-lg-4;
+    @extend .col-md-4;
+    @extend .col-sm-4;
+    @extend .col-xs-12;
+  }
+
+  #main-menu {
+    @extend .col-lg-8;
+    @extend .col-md-8;
+    @extend .col-sm-8;
+    @extend .col-xs-12;
+  }
+
+}

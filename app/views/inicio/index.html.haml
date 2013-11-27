@@ -1,8 +1,14 @@
 %h1 Inicio
 %h2 Portada
 
-- @portadas.each do |portada|
-  = image_tag portada.imagen_url(:full)
+= render 'slides_carousel'
+
+
+
+
+
+
+
 
 %h2 Titulo del video testimonial
 = @video.link_html
@@ -14,11 +20,10 @@
 - @publicaciones.each do |publicacion|
   = image_tag publicacion.imagenes.first.imagen_url(:thumb)
 
-%br
+= render 'bootstrap3_carousel'
 
-%h2 Banner
-- @slides.each do |slide|
-  = image_tag slide.imagen_url(:full)
+
+
 
 %h2 Testimonio
 = image_tag @testimonio.foto_url(:thumb)

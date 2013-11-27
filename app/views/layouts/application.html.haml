@@ -8,12 +8,26 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .container
-      %header
-        = render 'layouts/navigation'
+    %header#main-header
+      .container
+        .row
+          %h1#logo
+            = link_to image_tag('logo.png'), '/'
+          #main-menu
+            #menu-top
+              = render 'layouts/navigation'
+            = render 'layouts/nav_advanced'
+
+  %section#main-content
+    = yield
+
+  #content-bottom
+    = render 'layouts/buscador'
+
+    -#
       %main{:role => "main"}
         .content
           = render 'layouts/messages'
           = render 'layouts/buscador'
           = yield
-      %footer
+    %footer#main-footer

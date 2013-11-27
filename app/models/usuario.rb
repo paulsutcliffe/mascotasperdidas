@@ -6,7 +6,8 @@ class Usuario < ActiveRecord::Base
 
   has_many :publicaciones
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre, :apellido, :dni, :telefono, :direccion_attributes
   # attr_accessible :title, :body
   has_one :direccion
+  accepts_nested_attributes_for :direccion
 end

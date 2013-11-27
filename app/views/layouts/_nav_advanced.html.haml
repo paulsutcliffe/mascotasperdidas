@@ -10,14 +10,14 @@
   .collapse.navbar-collapse.navbar-ex1-collapse
     %ul.nav.navbar-nav
       %li.active
-        = link_to 'Perdidos', publicaciones_path
+        = link_to 'Perdidos', publicaciones_path(tipo: 'Perdido')
       %li
-        = link_to 'Encontrados', publicaciones_path
+        = link_to 'Encontrados', publicaciones_path(tipo: 'Encontrado')
       %li
-        = link_to 'Blog', publicaciones_path
+        = link_to 'Blog', noticias_path
         
       %li
-        %a{href: "#"} Contacto
+        = link_to 'Contacto', new_contacto_path
 
 
   / /.navbar-collapse

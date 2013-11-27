@@ -19,6 +19,37 @@
         = f.label :password_confirmation, "Confirmar Contraseña", class: 'col-sm-2 control-label'
         .col-sm-10
           = f.password_field :password_confirmation, class: 'form-control'
+      .form-group
+        = f.label :nombre, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :nombre, class: 'form-control'
+      .form-group
+        = f.label :apellido, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :apellido, class: 'form-control'
+      .form-group
+        = f.label :dni, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :dni, class: 'form-control'
+      .form-group
+        = f.label :telefono, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :telefono, class: 'form-control'
+      - resource.build_direccion if resource.direccion.nil?
+      = f.fields_for(:direccion) do |direccion_form|
+        .form-group
+          = direccion_form.label :provincia, class: 'col-sm-2 control-label'
+          .col-sm-10
+            = direccion_form.select :provincia, options_for_select(Provincia.all.collect { |provincia| [provincia.nombre]}), class: 'form-control'
+        .form-group
+          = direccion_form.label :ciudad, class: 'col-sm-2 control-label'
+          .col-sm-10
+            = direccion_form.select :ciudad, options_for_select(Ciudad.all.collect { |ciudad| [ciudad.nombre]}), class: 'form-control'
+        .form-group
+          = direccion_form.label :distrito, class: 'col-sm-2 control-label'
+          .col-sm-10
+            = direccion_form.select :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), class: 'form-control' 
+
       .admin-controls
         %div= f.submit "Registrarse", class: 'btn btn-default'
   = render "usuarios/shared/links"

@@ -1,5 +1,5 @@
 class PublicacionesController < InheritedResources::Base
-  before_filter :authenticate_usuario!, :except => [:resultado_de_busqueda, :show]
+  before_filter :authenticate_usuario!, :except => [:index, :resultado_de_busqueda, :show]
   before_filter :setup_usuario
   def new
     @publicacion = Publicacion.new
@@ -10,7 +10,7 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def index
-    @publicaciones = Publicacion.all
+    @publicaciones = params[:tipo] ? Publicacion.where("tipo = ?", params[:tipo]) : Publicacion.all
     respond_to do |format|
       format.html
       format.js {}

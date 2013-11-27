@@ -18,11 +18,12 @@
               = render 'layouts/navigation'
             = render 'layouts/nav_advanced'
 
+  #content-bottom
+    = render 'layouts/bootstrap3_carousel'
+    = render 'layouts/buscador'
+
   %section#main-content
     = yield
-
-  #content-bottom
-    = render 'layouts/buscador'
 
     -#
       %main{:role => "main"}

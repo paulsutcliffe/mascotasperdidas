@@ -25,3 +25,131 @@
   }
 
 }
+
+.container {@extend .m-bottom-m}
+
+
+#main-footer {
+  background: $cyan; min-height: 200px;
+  .region-inner {
+    @extend .col-lg-9;
+    @extend .col-md-9;
+    @extend .col-sm-9;
+    @extend .col-xs-9;
+
+    fieldset {
+      @extend .col-lg-6;
+      @extend .col-md-6;
+      @extend .col-sm-6;
+      @extend .col-xs-6;
+    }
+
+  }
+  .region-inner.sidebar {
+    @extend .col-lg-3;
+    @extend .col-md-3;
+    @extend .col-sm-3;
+    @extend .col-xs-3;
+  }
+
+}
+
+
+#page-search {
+  position: relative; margin-top: -130px;
+  .form-group {
+    @extend .col-lg-4;
+    @extend .col-md-4;
+    @extend .col-sm-4;
+    @extend .col-xs-12;
+    
+    @extend .custom-box;
+
+    .inner {min-height: 175px;}
+  }
+  .form-group-first .inner {background: $black}
+  .form-group-second .inner {background: $cyan2}
+  .form-group-third .inner {background: $yellow}
+  label {text-align: center; color: white; font-size: $legible1; display: block; @extend .m-bottom-s}
+  select {@extend .m-bottom-s}
+}
+
+#page-presentation {
+  .region-inner {
+    @extend .col-lg-12;
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+ 
+    @extend .jumbotron;
+  }
+
+  
+}
+
+
+
+// HOME
+
+#page-presentation {
+  font-style: italic;
+}
+
+#inicio-video {
+  .region-inner {
+    @extend .col-lg-12;
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+ 
+    iframe {
+      @extend .iframe-full;
+      @extend .m-bottom-m;
+    }
+  }
+}
+
+
+#inicio-ultimas {
+  .region-inner {
+    @extend .col-lg-9;
+    @extend .col-md-9;
+    @extend .col-sm-9;
+    @extend .col-xs-9;
+
+    .item {
+      @extend .col-lg-4;
+      @extend .col-md-4;
+      @extend .col-sm-4;
+      @extend .col-xs-4;
+      img {
+        @extend .img-full;
+      }
+      @extend .m-bottom-s;
+    }
+  }
+  .region-inner.sidebar {
+    @extend .col-lg-3;
+    @extend .col-md-3;
+    @extend .col-sm-3;
+    @extend .col-xs-3;
+    .item { 
+      @extend .col-lg-12;
+      @extend .col-md-12;
+      @extend .col-sm-12;
+      @extend .col-xs-12;
+      p {margin-top: 10px}
+    }
+  }
+}
+
+#inicio-testimonios {
+  .region-inner {
+    @extend .col-lg-12;
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+  }
+
+  img {@extend .img-left }
+}

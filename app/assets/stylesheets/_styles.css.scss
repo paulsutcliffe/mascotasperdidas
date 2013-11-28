@@ -29,3 +29,35 @@ padding: 3px 20px; text-transform: uppercase}
     }
     p { margin-top: 45px; }
 }
+
+
+
+.carousel-indicators {
+  @include absolute(top, right, 20px, 20px); width: auto; left: auto;
+  li, li.active {
+    float: none; display: block; margin-bottom: 10px;
+  }
+}
+
+.item {@extend .clearfix}
+#main-footer {
+  padding: 40px 0;
+}
+
+$icons-sprite-dimensions: true;
+@import "icons/*.png"; /**/
+@include all-icons-sprites;
+
+
+i.icon {
+  display: block; margin-right: 10px; float: left;
+  &.icon-1 {@include icons-sprite(icon_1)}
+  &.icon-2 {@include icons-sprite(icon_2)}
+  &.icon-3 {@include icons-sprite(icon_3)}
+
+  &.facebook {@include icons-sprite(facebook)}
+  &.twitter {@include icons-sprite(twitter)}
+  &.vimeo {@include icons-sprite(vimeo)}
+
+
+}

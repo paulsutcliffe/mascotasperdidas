@@ -15,12 +15,19 @@
             = link_to image_tag('logo.png'), '/'
           #main-menu
             #menu-top
-              = render 'layouts/navigation'
+              = render 'layouts/nav_top'
             = render 'layouts/nav_advanced'
 
   #content-bottom
-    = render 'layouts/bootstrap3_carousel'
-    = render 'layouts/buscador'
+    #page-carousel
+      = render 'layouts/bootstrap3_carousel'
+    #page-search.container
+      .region-inner
+        = render 'layouts/buscador'
+
+    #page-presentation.container
+      .region-inner
+        %h2 <b>ÚNETE</b> A MASCOTAS PERDIDAS Y <b>ENCONTRARÁS</b> A TU MASCOTA RÁPIDAMENTE
 
   %section#main-content
     = yield
@@ -31,4 +38,24 @@
           = render 'layouts/messages'
           = render 'layouts/buscador'
           = yield
-    %footer#main-footer
+  %footer#main-footer
+    .container
+      .region
+        .region-inner.region-title
+          %h2.title Escríbenos
+
+          .region
+            %form
+              %fieldset
+                .form-group
+                  %input{type: 'text', class: 'form-control'}
+              %fieldset
+                .form-group
+                  %textarea.form-control
+
+         
+
+
+    
+        .region-inner.sidebar    
+          = render 'layouts/secondary_menu'

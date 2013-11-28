@@ -6,19 +6,57 @@
 
 
 
-
-%h2 Titulo del video testimonial
-= @video.link_html
-
-%br
-
-%h2 Ultimas mascotas perdidas
-
-- @publicaciones.each do |publicacion|
-  = image_tag publicacion.imagenes.first.imagen_url(:thumb)
+#inicio-video.container
+  .region
+    .region-title
+      %h2.title Titulo del video testimonial
+    .region-inner
+      = @video.link_html
 
 
 
-%h2 Testimonio
-= image_tag @testimonio.foto_url(:thumb)
-= @testimonio.contenido
+#inicio-ultimas.container
+  .region
+    .region-inner.region-title
+      %h2.title Ultimas mascotas perdidas
+
+      .region
+        - @publicaciones.each do |publicacion|
+          .item
+            = image_tag publicacion.imagenes.first.imagen_url(:thumb)
+    .region-inner.sidebar
+      %h2.title Publica ya
+      Es muy fácil
+      .item
+        %i.icon.icon-1
+        %p Regístrate
+      .item
+        %i.icon.icon-2
+        %p Llena los datos de tu mascota
+      .item
+        %i.icon.icon-3
+        %p Publica y listo
+
+
+#inicio-mascotas.container
+  .region
+    .region-title
+      %h2.title MASCOTAS PERDIDAS
+
+    .region-inner
+      %p
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, 
+        there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        A small river named Duden flows by their place and supplies it with the necessary regelialia. 
+        It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+
+
+#inicio-testimonios.container
+  .region
+    .region-title
+      %h2.title Testimonio
+
+    .region-inner
+      = image_tag @testimonio.foto_url(:thumb)
+      
+      = paragraph(@testimonio.contenido)

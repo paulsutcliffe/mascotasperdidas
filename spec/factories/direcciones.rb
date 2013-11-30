@@ -7,5 +7,6 @@ FactoryGirl.define do
     distrito "Ate Vitarte"
     calle "Sullana 275"
     referencia "A la altura de la cuadra 6 de los quechuas"
+    publicacion
   end
 end

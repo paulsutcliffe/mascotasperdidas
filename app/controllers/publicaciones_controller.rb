@@ -6,7 +6,7 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def setup_usuario
-    @usuario = Usuario.find(current_usuario.id) if current_admin
+    @usuario = Usuario.find(current_usuario.id) if current_usuario
   end
 
   def index

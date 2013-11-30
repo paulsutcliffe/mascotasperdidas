@@ -48,7 +48,15 @@
         .form-group
           = direccion_form.label :distrito, class: 'col-sm-2 control-label'
           .col-sm-10
-            = direccion_form.select :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), class: 'form-control' 
+            = direccion_form.select :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), class: 'form-control'
+        .form-group
+          = direccion_form.label :calle, class: 'col-sm-2 control-label'
+          .col-sm-10
+            = direccion_form.text_field :calle, class: 'form-control'
+        .form-group
+          = direccion_form.label :referencia, class: 'col-sm-2 control-label'
+          .col-sm-10
+            = direccion_form.text_area :referencia, class: 'form-control'
 
       .admin-controls
         %div= f.submit "Registrarse", class: 'btn btn-default'

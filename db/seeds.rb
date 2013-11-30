@@ -35,8 +35,8 @@ end
   FactoryGirl.create :portada
 end
 
-12.times do
-  FactoryGirl.create :publicacion
+6.times do
+  FactoryGirl.create :direccion
 end
 
 

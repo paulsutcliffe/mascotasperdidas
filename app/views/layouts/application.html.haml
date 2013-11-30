@@ -6,6 +6,7 @@
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Mascotasperdidas'}"}
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
+    = yield(:javascript)
     = csrf_meta_tags
   %body
     %header#main-header
@@ -53,9 +54,9 @@
                 .form-group
                   %textarea.form-control
 
-         
 
 
-    
-        .region-inner.sidebar    
+
+
+        .region-inner.sidebar
           = render 'layouts/secondary_menu'

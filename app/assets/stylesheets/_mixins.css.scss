@@ -24,6 +24,25 @@
 .m-bottom-m {margin-bottom: 40px}
 .m-bottom-l {margin-bottom: 60px}
 
+.m-top-xs {margin-top: 10px}
+.m-top-s {margin-top: 20px}
+.m-top-s-i {margin-top: 20px !important}
+.m-top-m {margin-top: 40px}
+.m-top-l {margin-top: 60px}
+
+.p-bottom-xs {padding-bottom: 10px}
+.p-bottom-s {padding-bottom: 20px}
+.p-bottom-s-i {padding-bottom: 20px !important}
+.p-bottom-m {padding-bottom: 40px}
+.p-bottom-l {padding-bottom: 60px}
+
+.p-top-xs {padding-top: 10px}
+.p-top-s {padding-top: 20px}
+.p-top-s-i {padding-top: 20px !important}
+.p-top-m {padding-top: 40px}
+.p-top-l {padding-top: 60px}
+
+
 .default-button {@extend .btn; @extend .btn-default; text-transform: uppercase}
 
 

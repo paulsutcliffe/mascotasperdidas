@@ -1,62 +1,68 @@
-#region-publicaciones.container
+#region-publicacion.container
   .region
     .region-title
-      %h1= page_title!('publicacion')
+      %h1.page-title= page_title! @publicacion.nombre + ' ' +  @publicacion.tipo
 
-  .region
-    %p
-      %b Tipo:
-      = @publicacion.tipo
-    %p
-      %b Animal:
-      = @publicacion.animal
-    %p
-      %b Raza:
-      = @publicacion.raza
-    %p
-      %b Nombre:
-      = @publicacion.nombre
-    %p
-      %b Recompensa:
-      = @publicacion.recompensa
-    %p
-      %b Fecha:
-      = @publicacion.fecha
-    %p
-      %b Descripcion:
-      = @publicacion.descripcion
-    %p
-      %b Portada:
-      = image_tag @publicacion.portada_url(:regular)
-    %p
-      %b Fotos:
-      - @publicacion.imagenes.each do |imagen|
-        = image_tag imagen.imagen_url(:thumb)
-    %p
-      %b Edad:
-      = @publicacion.edad
-    %p
-      %b Sexo:
-      = @publicacion.sexo
-    %p
-      %b Provincia:
-      = @publicacion.direccion.provincia
-    %p
-      %b Ciudad:
-      = @publicacion.direccion.ciudad
-    %p
-      %b Distrito:
-      = @publicacion.direccion.distrito
-    %p
-      %b Calle:
-      = @publicacion.direccion.calle
-    %p
-      %b Referencia:
-      = @publicacion.direccion.referencia
+    .region-inner
+      .region
+        .column
+          %h2.title
+            = @publicacion.animal + ' ' + @publicacion.raza
+            %span.bolded
+              = @publicacion.sexo + ' ' + @publicacion.edad
+
+        .column
+          %b Recompensa:
+          = @publicacion.recompensa
+
+    .region-inner
+      .region
+        .column
+          Visto por última vez
+
+        .column
+          Contactar
+
+    #region-publicacion-imagenes.region-inner
+      .region
+        - 1.upto(7) do |i| # remover esto
+          - @publicacion.imagenes.each do |imagen|
+            .item
+              = image_tag imagen.imagen_url(:thumb)
+
+    .region-inner
+      .region
+        .column
+          %h2.title Descripción
+          = paragraph(@publicacion.descripcion)
+
+        .column
+          %h2.title Ubicación donde fue perdido
+
+    .region-inner
+      = link_to 'Regresar', publicaciones_path, class: 'btn-back'
+
+
+    -#
+      %p
+        %b Provincia:
+        = @publicacion.direccion.provincia
+      %p
+        %b Ciudad:
+        = @publicacion.direccion.ciudad
+      %p
+        %b Distrito:
+        = @publicacion.direccion.distrito
+      %p
+        %b Calle:
+        = @publicacion.direccion.calle
+      %p
+        %b Referencia:
+        = @publicacion.direccion.referencia
 
 
   .region
     - if current_admin
       .admin-controls
         = link_to 'Editar', edit_publicacion_path(@publicacion), class: 'btn btn-success'
-    = link_to 'Regresar', publicaciones_path, class: 'btn btn-warning'
+    

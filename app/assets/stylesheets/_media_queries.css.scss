@@ -1,0 +1,21 @@
+
+
+
+
+@media (max-width: 767px) {
+ .custom-list li {
+      .item-figure,
+      img {width: 100% !important}
+      .item-links, .publicaciones-list li .item-links {position: relative;
+      .btn.btn-info.to-right {float: none; margin-left: auto; margin-right: auto; display: block}
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+ .custom-list li {
+      .item-links, .publicaciones-list li .item-links {position: relative;
+        .btn.btn-info.to-right {clear: none; margin-left: 20px}
+    }
+  }
+}

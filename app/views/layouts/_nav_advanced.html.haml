@@ -9,15 +9,23 @@
   / Collect the nav links, forms, and other content for toggling
   .collapse.navbar-collapse.navbar-ex1-collapse
     %ul.nav.navbar-nav
-      %li.active
-        = link_to 'Perdidos', publicaciones_path(tipo: 'Perdido')
       %li
-        = link_to 'Encontrados', publicaciones_path(tipo: 'Encontrado')
+        = link_to_unless_current 'Perdidos', publicaciones_path(tipo: 'Perdido') do
+          %span
+            Perdidos
       %li
-        = link_to 'Blog', noticias_path
+        = link_to_unless_current 'Encontrados', publicaciones_path(tipo: 'Encontrado') do
+          %span
+            Encontrados
+      %li
+        = link_to_unless_current 'Blog', noticias_path do
+          %span
+            Blog
         
       %li
-        = link_to 'Contacto', new_contacto_path
+        = link_to_unless_current 'Contacto', new_contacto_path do
+          %span
+            Contacto
 
 
   / /.navbar-collapse

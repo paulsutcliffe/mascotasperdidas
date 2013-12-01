@@ -9,12 +9,19 @@ a, p, ul,
 h1, h2, h3, h4, h5, h6 {font-family: 'Cabin', sans-serif; margin: 0}
 
 
-.heading-default {margin-bottom: 30px; text-transform: uppercase; font-weight: bold}
+.heading-default {margin-bottom: 30px; text-transform: uppercase; font-weight: bold; color: $black}
 
 #main-footer {a {text-transform: uppercase; color: white}}
 h1.page-title {font-size: $page_title; @extend .heading-default;}
 h2.title {font-size: $heading; @extend .heading-default;  }
+.subtitle {@extend .heading-default; font-size: $heading - 6px; margin-bottom: 5px; color: $gray2; letter-spacing: 1px}
+.resaltado {@extend .heading-default; font-size: $heading - 12px; font-weight: 300; margin-bottom: 5px; color: $gray2; letter-spacing: 1px}
+.bolded {text-transform: uppercase; color: black}
 
-.item, .sidebar {
+.item, li {
+  h2.title {margin-bottom: 5px}
+}
+
+.sidebar {
   h2.title {margin-bottom: 5px; font-weight: 300}
 }

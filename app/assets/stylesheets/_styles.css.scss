@@ -1,15 +1,18 @@
 .nav > li > a {padding: 0}
 .navbar-default .navbar-nav > li {margin-left: 18px}
-.navbar-default .navbar-nav > li > a {background: $cyan; color: white; text-transform: uppercase; border-radius: 17px;
-padding: 3px 20px; text-transform: uppercase;  }
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > span {background: $cyan; color: white; text-transform: uppercase; border-radius: 17px;
+padding: 3px 20px; text-transform: uppercase; @include inline-block }
 
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {background: $black; color: white}
+.navbar-default .navbar-nav > li > a:focus {background: $cyan2; color: white}
 
 .navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {background: $black; color: white}
 
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {background: $cyan2; color: white}
+
+.navbar-default .navbar-nav > li > span {background: $black}
 
 .navbar-default {border: 0; border-radius: 0; background: none}
 
@@ -61,9 +64,17 @@ padding: 3px 20px; text-transform: uppercase;  }
 
 
 .since {float: left; margin-top: 24px; text-transform: uppercase; font-weight: bold; font-size: 16px}
-.btn.btn-info.to-right {float: right; background: $yellow; color: white; border: 1px solid #ccc; margin-top: 10px; padding: 3px 30px;
-text-transform: uppercase; font-size: $legible1;
+.btn.btn-info.to-right {float: right; clear: right; 
+  background: $yellow; color: white; border: 1px solid #ccc; margin: 10px 0; padding: 3px 0px; width: 180px;
+  text-transform: uppercase; font-size: $legible;
+  &.cyan {background: $cyan2;
+    &:hover {background: $cyan2}
+  }
   &:hover {background: $yellow2}
+}
+
+.btn-back {
+  @extend .btn; @extend .btn-default;
 }
 
 
@@ -94,5 +105,32 @@ i.icon {
   &.twitter {@include icons-sprite(twitter)}
   &.vimeo {@include icons-sprite(vimeo)}
 
+
+}
+
+
+.publicaciones-list {
+  @extend .custom-list;
+}
+
+.custom-list {
+  padding-left: 0;
+  li {
+    position: relative;
+    h2.title {margin-bottom: 20px;}
+    @extend .clearfix; list-style: none; @extend .m-bottom-s; @extend .p-bottom-s; border-bottom: 1px solid $gray;
+    .item-figure {@extend .pull-left;
+      img {@extend .media-object; @extend .img-left; margin-bottom: 0}
+    }
+    .item-content {
+      @extend .media-object;
+      .item-tipo {@extend .subtitle}
+      .item-visto {@extend .resaltado}
+      .item-edad {@extend .bolded}
+    }
+    .item-links {
+      @include absolute(right, top, 0, 0)
+    }
+  }
 
 }

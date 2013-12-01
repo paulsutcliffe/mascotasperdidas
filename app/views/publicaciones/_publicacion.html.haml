@@ -1,17 +1,30 @@
-.table-responsive
-  %table.table
-    %tr
-      %td= publicacion.tipo
-      %td= publicacion.animal
-      %td= publicacion.raza
-      %td= publicacion.nombre
-      %td= publicacion.recompensa
-      %td= publicacion.fecha
-      %td= truncate(publicacion.descripcion, :length => 30)
-      %td= image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.first
-      %td= publicacion.edad
-      %td= publicacion.sexo
-      %td= link_to 'Ver', publicacion, class: 'btn btn-info'
-      - if current_admin or current_usuario
-        %td= link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
-        %td= link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+%ul.publicaciones-list
+  %li
+    .item-figure
+      = image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.first
+
+    .item-content
+      %h2.title= publicacion.nombre
+
+      .item-tipo
+        = publicacion.animal
+        = publicacion.tipo
+        = publicacion.raza
+
+      .item-visto
+        Visto por última vez el en
+        = publicacion.fecha
+
+      .item-edad
+        = publicacion.sexo
+        = publicacion.edad
+
+      
+
+    .item-links
+      = link_to 'Ver más', publicacion, class: 'btn btn-info to-right'
+      = link_to 'Contactar', publicacion, class: 'btn btn-info to-right cyan'
+
+    - if current_admin or current_usuario
+      = link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
+      = link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

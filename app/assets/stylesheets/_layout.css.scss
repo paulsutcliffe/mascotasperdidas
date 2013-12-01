@@ -173,3 +173,24 @@
   }
 
 }
+
+
+
+#region-publicacion {
+ .column {
+    @extend .col-lg-6;
+    @extend .col-md-6;
+    @extend .col-sm-6;
+    @extend .col-xs-12;
+  }
+
+ .item {
+    @extend .col-lg-3;
+    @extend .col-md-3;
+    @extend .col-sm-3;
+    @extend .col-xs-12;
+  
+    img {@extend .img-full}
+    @extend .m-bottom-s
+  }
+}

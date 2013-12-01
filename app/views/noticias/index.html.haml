@@ -1,32 +1,41 @@
-#region-noticias.container
+#region-noticias.container.sidebar-region
 
   .region
     .region-title
-      %h1= page_title!('Listando noticias')
+      %h1.page-title= page_title!('Blog')
 
-    .region
+    .region-inner
       - if current_admin
         .admin-control
           = link_to 'Crear Noticia', new_noticia_path, class: 'btn btn-primary'
 
-      .table-responsive
-        %table.table
-          %tr
-            %th Titulo
-            %th Contenido
-            %th Foto
-            %th Video
-            %th
-            %th
-            %th
 
-          - @noticias.each do |noticia|
-            %tr
-              %td= noticia.titulo
-              %td= noticia.contenido
-              %td= image_tag noticia.foto_url(:regular)
-              %td= noticia.video_html
-              %td= link_to 'Ver', noticia, class: 'btn btn-info'
-              - if current_admin
-                %td= link_to 'Editar', edit_noticia_path(noticia), class: 'btn btn-success'
-                %td= link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+  
+  
+  .region
+    .region-inner.sidebar.region-title
+      %h2.title Tags
+      %ul.taglist
+        %li
+          = link_to 'Perro', ''
+        %li
+          = link_to 'Perro', ''
+        %li
+          = link_to 'Perro', ''
+        %li
+          = link_to 'Perro', ''
+
+
+    .region-inner
+      - @noticias.each do |noticia|
+        .item
+          %h2.title= noticia.titulo
+          .item-image-wrapper
+            .item-paragraph
+              = paragraph_truncate(noticia.contenido, 200)
+            = image_tag noticia.foto_url(:regular)
+          %span.since Hace 5 días
+          = link_to 'Ver más', noticia, class: 'btn btn-info to-right'
+          - if current_admin
+            = link_to 'Editar', edit_noticia_path(noticia), class: 'btn btn-success'
+            = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

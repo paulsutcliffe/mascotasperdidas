@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require scripts.js
+//= require jquery.chained.min.js

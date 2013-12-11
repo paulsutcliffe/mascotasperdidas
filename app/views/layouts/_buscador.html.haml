@@ -6,7 +6,7 @@
       %label
         ¿PERDIDO O ENCONTRADO?
       = select_tag :tipo, options_for_select(Publicacion::TIPOS.collect { |i| [i]}), :prompt => "Perdido/Encontrado", class: 'form-control'
-      = select_tag :animal, options_for_select(Animal.all.collect { |animal| [animal.nombre]}), :prompt => "Animal", class: 'form-control'
+      =# select_tag :animal, options_for_select(Animal.all.collect { |animal| [animal.nombre]}), :prompt => "Animal", class: 'form-control'
       = select_tag :raza, options_for_select(Raza.all.collect { |raza| [raza.nombre]}), :prompt => "Raza", class: 'form-control'
 
 

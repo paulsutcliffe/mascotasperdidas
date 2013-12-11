@@ -12,8 +12,9 @@
               = @publicacion.sexo + ' ' + @publicacion.edad
 
         .column
-          %b Recompensa:
-          = @publicacion.recompensa
+          - unless @publicacion.recompensa == 0
+            %b Recompensa:
+            = @publicacion.recompensa
 
     .region-inner
       .region
@@ -25,10 +26,9 @@
 
     #region-publicacion-imagenes.region-inner
       .region
-        - 1.upto(7) do |i| # remover esto
-          - @publicacion.imagenes.each do |imagen|
-            .item
-              = image_tag imagen.imagen_url(:thumb)
+        - @publicacion.imagenes.each do |imagen|
+          .item
+            = image_tag imagen.imagen_url(:thumb)
 
     .region-inner
       .region

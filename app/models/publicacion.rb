@@ -11,6 +11,11 @@ class Publicacion < ActiveRecord::Base
   #geocoded_by :direccion
   #after_validation :geocode, :if => :direccion_changed?
 
+  validates :nombre, presence: true
+  validates :recompensa, numericality: true
+  validates :descripcion, presence: true
+  
+
   TIPOS = ['Perdido','Encontrado']
   SEXO = ['Macho','Hembra']
 
@@ -18,15 +23,12 @@ class Publicacion < ActiveRecord::Base
     "#{nombre} #{animal} #{raza} #{tipo}"
   end
 
-  def self.buscar(busqueda)
-    if busqueda
-      find(:all, :conditions => ['tipo LIKE ?', "#{busqueda}"])
-    else
-      find(:all)
-    end
+  def self.buscar(tipo,raza,ciudad,distrito,fecha)
+    find(:all, :conditions => ['tipo LIKE ? AND raza LIKE ? AND direccion.ciudad LIKE ? AND direccion.distrito LIKE ? AND fecha LIKE ?', "#{tipo}", "#{raza}", "#{ciudad}", "#{distrito}", "#{fecha}"])
   end
 
   friendly_id :titulo, use: :slugged
 
   mount_uploader :portada, PortadaUploader
+
 end

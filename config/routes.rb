@@ -1,5 +1,9 @@
 Mascotasperdidas::Application.routes.draw do
 
+  get "mascotas/index"
+
+  get "politicas/index"
+
   match '/publicaciones/resultado-de-busqueda' => 'publicaciones#resultado_de_busqueda', via: :get, as: 'resultado_de_busqueda'
 
   resources :direcciones

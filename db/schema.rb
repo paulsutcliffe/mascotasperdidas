@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(:version => 20131125195519) do
     t.string   "animal"
     t.string   "raza"
     t.string   "nombre"
-    t.float    "recompensa"
+    t.float    "recompensa",  :default => 0.0,         :null => false
     t.date     "fecha"
     t.text     "descripcion"
     t.float    "lat"

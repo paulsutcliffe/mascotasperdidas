@@ -28,6 +28,6 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def resultado_de_busqueda
-    @publicaciones = Publicacion.buscar(params[:tipo])
+    @publicaciones = Publicacion.buscar(params[:tipo],params[:raza],params[:ciudad],params[:distrito],params[:fecha])
   end
 end

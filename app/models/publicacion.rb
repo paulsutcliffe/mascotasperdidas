@@ -23,8 +23,8 @@ class Publicacion < ActiveRecord::Base
     "#{nombre} #{animal} #{raza} #{tipo}"
   end
 
-  def self.buscar(tipo,raza,ciudad,distrito,fecha)
-    find(:all, :conditions => ['tipo LIKE ? AND raza LIKE ? AND direccion.ciudad LIKE ? AND direccion.distrito LIKE ? AND fecha LIKE ?', "#{tipo}", "#{raza}", "#{ciudad}", "#{distrito}", "#{fecha}"])
+  def self.buscar(tipo, raza, ciudad, distrito, fecha)
+    where("tipo = ? AND raza = ? AND extract(month from fecha) = ?", "#{tipo}", "#{raza}", "#{fecha["use_month_names(2i)"].to_i}").joins(:direccion).where("ciudad = ? AND distrito = ?", "#{ciudad}", "#{distrito}")
   end
 
   friendly_id :titulo, use: :slugged

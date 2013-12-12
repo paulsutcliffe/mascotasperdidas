@@ -1,0 +1,19 @@
+Publicacion Realizada
+
+= @publicacion.tipo
+= @publicacion.animal
+= @publicacion.raza
+= @publicacion.nombre
+= @publicacion.fecha
+= @publicacion.edad
+= @publicacion.sexo
+= @publicacion.descripcion
+= @publicacion.recompensa
+- @publicacion.imagenes.each do |imagen|
+  = 'http://www.mascotasperdidas.pe' + imagen.imagen_url(:thumb)
+= @publicacion.direccion.provincia
+= @publicacion.direccion.ciudad
+= @publicacion.direccion.distrito
+= @publicacion.direccion.calle
+= @publicacion.direccion.referencia
+

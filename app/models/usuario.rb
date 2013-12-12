@@ -4,7 +4,8 @@ class Usuario < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :publicaciones
+  has_many :publicaciones, :through => :transacciones
+  has_many :transacciones
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :nombre, :apellido, :dni, :telefono, :direccion_attributes
   # attr_accessible :title, :body

@@ -1,12 +1,16 @@
 class Publicacion < ActiveRecord::Base
-  attr_accessible :animal, :descripcion, :edad, :fecha, :lat, :lng, :nombre, :portada, :raza, :recompensa, :sexo, :tipo, :imagenes_attributes, :status
+  attr_accessible :animal, :descripcion, :edad, :fecha, :lat, :lng, :nombre, :portada, :raza, :recompensa, :sexo, :tipo, :imagenes_attributes, :status, :portada_attributes
 
   extend FriendlyId
   belongs_to :usuario
   has_many :imagenes
   has_one :direccion
   has_one :plan
+  has_many :portada
+  has_many :transacciones
+  has_many :usuario, :through => :transacciones
   accepts_nested_attributes_for :imagenes
+  accepts_nested_attributes_for :portada, :allow_destroy => true
 
   #geocoded_by :direccion
   #after_validation :geocode, :if => :direccion_changed?

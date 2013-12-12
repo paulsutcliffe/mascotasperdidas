@@ -1,4 +1,14 @@
 %ul.nav.nav-pills.navbar-right
+  - if current_usuario
+    %li
+      = link_to 'Cerrar Sesión', destroy_usuario_session_path, :method => :delete
+    %li
+      = link_to '/Mis Publicaciones', mis_publicaciones_path
+  - else
+    %li
+      = link_to 'Registrate', new_usuario_registration_path
+    %li
+      = link_to '/Ingresa', new_usuario_session_path
   %li 
     = link_to content_tag(:i, '', class: 'icon facebook'), ''
   %li 

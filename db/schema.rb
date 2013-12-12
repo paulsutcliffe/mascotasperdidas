@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131125195519) do
+ActiveRecord::Schema.define(:version => 20131212220558) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -112,8 +112,9 @@ ActiveRecord::Schema.define(:version => 20131125195519) do
 
   create_table "portadas", :force => true do |t|
     t.string   "imagen"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "publicacion_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "provincias", :force => true do |t|
@@ -164,6 +165,12 @@ ActiveRecord::Schema.define(:version => 20131125195519) do
     t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "transacciones", :force => true do |t|
+    t.integer  "publicacion_id"
+    t.integer  "usuario_id"
+    t.datetime "fecha"
   end
 
   create_table "usuarios", :force => true do |t|

@@ -18,6 +18,16 @@ class PublicacionesController < InheritedResources::Base
     end
   end
 
+  def mis_publicaciones
+    @publicaciones = Publicacion.where("usuario_id = ?", @usuario.id)
+    respond_to do |format|
+      format.html
+      format.js {}
+      format.json { render json: @publicaciones }
+    end
+  end
+
+
   def create
     @publicacion = @usuario.publicaciones.build(params[:publicacion])
     if @publicacion.save
@@ -29,5 +39,22 @@ class PublicacionesController < InheritedResources::Base
 
   def resultado_de_busqueda
     @publicaciones = Publicacion.buscar(params[:tipo], params[:raza], params[:ciudad], params[:distrito], params[:fecha])
+  end
+  def enviar_informacion
+    @publicacion = Publicacion.find(params[:id])
+    @transaccion = Transaccion.create(fecha: Time.now)
+    @publicacion.transacciones << @transaccion
+    @usuario.transacciones << @transaccion
+    @transaccion.save
+    create! do |success, failure|
+      success.html do
+        Notificador.notificar_a_la_persona(@publicacion, @usuario).deliver
+        Notificador.notificar_al_publicante(@usuario).deliver
+        render :transaccion_realizada
+      end
+    end
+  end
+  def transaccion_realizada
+    
   end
 end

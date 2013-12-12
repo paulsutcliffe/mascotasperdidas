@@ -14,6 +14,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'provincia', 'provincias'
   inflect.irregular 'direccion', 'direcciones'
   inflect.irregular 'error', 'errores'
+  inflect.irregular 'transaccion', 'transacciones'
 #   inflect.uncountable %w( fish sheep )
 end
 #

@@ -1,33 +1,33 @@
-%ul.publicaciones-list
-  %li
-    .item-figure
-      = image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.first
 
-    .item-content
-      %h2.title= publicacion.nombre
+%li
+  .item-figure
+    = image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.first
 
-      .item-tipo
-        = publicacion.animal
-        = publicacion.tipo
-        = publicacion.raza
+  .item-content
+    %h2.title= publicacion.nombre
 
-      .item-visto
-        Visto por última vez el en
-        = publicacion.fecha
+    .item-tipo
+      = publicacion.animal
+      = publicacion.tipo
+      = publicacion.raza
 
-      .item-edad
-        = publicacion.sexo
-        = publicacion.edad
+    .item-visto
+      Visto por última vez el en
+      = publicacion.fecha
 
-      
+    .item-edad
+      = publicacion.sexo
+      = publicacion.edad
 
-    .item-links
-      = link_to 'Ver más', publicacion, class: 'btn btn-info to-right'
+    
 
-    - if current_usuario
-      - unless params[:action] == 'mis_publicaciones'
-        = link_to 'Contactar', publicaciones_enviar_informacion_path(id: publicacion.id), class: 'btn btn-info to-right cyan'
+  .item-links
+    = link_to 'Ver más', publicacion, class: 'btn btn-info to-right'
 
-    - if current_admin or current_usuario
-      = link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
-      = link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+  - if current_usuario
+    - unless params[:action] == 'mis_publicaciones'
+      = link_to 'Contactar', publicaciones_enviar_informacion_path(id: publicacion.id), class: 'btn btn-info to-right cyan'
+
+  - if current_admin or current_usuario
+    = link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
+    = link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

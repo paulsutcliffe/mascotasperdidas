@@ -112,9 +112,8 @@ ActiveRecord::Schema.define(:version => 20131212220558) do
 
   create_table "portadas", :force => true do |t|
     t.string   "imagen"
-    t.integer  "publicacion_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "provincias", :force => true do |t|
@@ -129,7 +128,7 @@ ActiveRecord::Schema.define(:version => 20131212220558) do
     t.string   "animal"
     t.string   "raza"
     t.string   "nombre"
-    t.float    "recompensa",  :default => 0.0,         :null => false
+    t.float    "recompensa"
     t.date     "fecha"
     t.text     "descripcion"
     t.float    "lat"

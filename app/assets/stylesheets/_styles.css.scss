@@ -118,7 +118,7 @@ i.icon {
   li {
     position: relative;
     h2.title {margin-bottom: 20px;}
-    @extend .clearfix; list-style: none; @extend .m-bottom-s; @extend .p-bottom-s; border-bottom: 1px solid $gray;
+    @extend .clearfix; list-style: none; @extend .m-top-s; @extend .p-top-s; border-top: 1px solid $gray;
     .item-figure {@extend .pull-left;
       img {@extend .media-object; @extend .img-left; margin-bottom: 0}
     }

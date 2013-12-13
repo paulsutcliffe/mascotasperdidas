@@ -1,7 +1,7 @@
 #region-noticias.container
   .region
     .region-title
-      %h1= page_title!('noticia')
+      %h1= page_title!('Noticia')
 
   .region
     %p
@@ -12,10 +12,10 @@
       = @noticia.contenido
     %p
       %b Foto:
-      = @noticia.foto
+      = image_tag @noticia.foto_url(:regular)
     %p
       %b Video:
-      = @noticia.video
+      = @noticia.video_html
 
   .region
     - if current_admin

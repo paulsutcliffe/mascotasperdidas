@@ -21,11 +21,18 @@
         = link_to_unless_current 'Blog', noticias_path do
           %span
             Blog
-        
-      %li
-        = link_to_unless_current 'Contacto', new_contacto_path do
-          %span
-            Contacto
+
+      - if current_admin
+        %li
+          = link_to_unless_current 'Contacto', contactos_path do
+            %span
+              Contacto
+
+      - else
+        %li
+          = link_to_unless_current 'Contacto', new_contacto_path do
+            %span
+              Contacto
 
 
   / /.navbar-collapse

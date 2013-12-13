@@ -1,1 +1,18 @@
-Transaccion Realizada
+#region-transaccion_realizada.container
+  .region
+    .region-title
+      %h1.page-title= page_title!('Transacción Realizada')
+  .region
+    .region-inner
+      %p.lead
+        Te estamos enviando los datos por correo
+        esperamos que encuentres tu mascotas.
+  .region
+    .region-inner
+      %h2= @publicacion.nombre
+      %h2= @publicacion.tipo
+      %h3= @publicacion.animal
+      %h3= @publicacion.raza
+      = image_tag @publicacion.imagenes.first.imagen_url(:thumb) if @publicacion.imagenes
+
+

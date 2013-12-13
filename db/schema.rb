@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212220558) do
+ActiveRecord::Schema.define(:version => 20131213171053) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -112,8 +112,9 @@ ActiveRecord::Schema.define(:version => 20131212220558) do
 
   create_table "portadas", :force => true do |t|
     t.string   "imagen"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "publicacion_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "provincias", :force => true do |t|
@@ -128,7 +129,7 @@ ActiveRecord::Schema.define(:version => 20131212220558) do
     t.string   "animal"
     t.string   "raza"
     t.string   "nombre"
-    t.float    "recompensa"
+    t.float    "recompensa",  :default => 0.0,         :null => false
     t.date     "fecha"
     t.text     "descripcion"
     t.float    "lat"
@@ -173,9 +174,6 @@ ActiveRecord::Schema.define(:version => 20131212220558) do
   end
 
   create_table "usuarios", :force => true do |t|
-    t.string   "nombre"
-    t.string   "apellido"
-    t.string   "dni"
     t.string   "telefono"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -189,6 +187,9 @@ ActiveRecord::Schema.define(:version => 20131212220558) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
   end
 
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true

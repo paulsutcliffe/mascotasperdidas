@@ -3,7 +3,9 @@
   .region
     .region-title
       %h1= page_title!('Registrarse')
-
+  .region
+    = link_to image_tag('/assets/img-facebook-round.png'), usuario_omniauth_authorize_path(provider: 'facebook')
+    = link_to "Regístrate con tu cuenta de Facebook", usuario_omniauth_authorize_path(provider: 'facebook')
   .region
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { class: 'form-horizontal'}) do |f|
       = devise_error_messages!
@@ -19,18 +21,6 @@
         = f.label :password_confirmation, "Confirmar Contraseña", class: 'col-sm-2 control-label'
         .col-sm-10
           = f.password_field :password_confirmation, class: 'form-control'
-      .form-group
-        = f.label :nombre, class: 'col-sm-2 control-label'
-        .col-sm-10
-          = f.text_field :nombre, class: 'form-control'
-      .form-group
-        = f.label :apellido, class: 'col-sm-2 control-label'
-        .col-sm-10
-          = f.text_field :apellido, class: 'form-control'
-      .form-group
-        = f.label :dni, class: 'col-sm-2 control-label'
-        .col-sm-10
-          = f.text_field :dni, class: 'form-control'
       .form-group
         = f.label :telefono, class: 'col-sm-2 control-label'
         .col-sm-10

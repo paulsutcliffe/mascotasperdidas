@@ -2,9 +2,6 @@
 require 'faker'
 FactoryGirl.define do
   factory :usuario do
-    nombre { Faker::Name.first_name }
-    apellido { Faker::Name.last_name }
-    dni "47278116"
     telefono { Faker::PhoneNumber.phone_number}
     email "email@domain.com"
     password "12345678"

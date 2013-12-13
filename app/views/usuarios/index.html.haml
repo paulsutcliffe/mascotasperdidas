@@ -17,9 +17,9 @@
 
           - @usuarios.each do |usuario|
             %tr
-              %td= usuario.nombre
+              %td= usuario.name
               %td= usuario.email
-              %td= # usuario.provider if usuario.provider
+              %td= usuario.provider if usuario.provider
               %td= l usuario.last_sign_in_at, format: :short if usuario.last_sign_in_at
               %td= l usuario.created_at, format: :short
               %td= link_to 'Eliminar', usuario, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

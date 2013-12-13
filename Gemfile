@@ -36,6 +36,9 @@ gem "capistrano"
 
 # To use debugger
 # gem 'debugger'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'koala'
 gem 'geocoder'
 gem "nested_form"
 gem "auto_html"

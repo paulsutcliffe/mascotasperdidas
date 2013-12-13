@@ -1,5 +1,5 @@
 
-%li
+%li.publicacion
   .item-figure
     = image_tag publicacion.imagenes.first.imagen_url(:thumb) if publicacion.imagenes.first
 
@@ -31,3 +31,4 @@
   - if current_admin or current_usuario
     = link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
     = link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+

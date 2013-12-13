@@ -36,6 +36,7 @@ gem "capistrano"
 
 # To use debugger
 # gem 'debugger'
+gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'koala'
@@ -49,7 +50,6 @@ gem "rails_layout", :group => :development
 gem "rvm-capistrano"
 gem "haml"
 gem "scaffold-bootstrap3"
-gem "will_paginate"
 gem "inherited_resources"
 gem "page_title_helper"
 gem "friendly_id", "~> 4.0.9"

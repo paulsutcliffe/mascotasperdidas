@@ -15,3 +15,5 @@
 //= require bootstrap
 //= require scripts.js
 //= require jquery.chained.min.js
+//= require jquery.infinitescroll
+//= require publicaciones.js.coffee

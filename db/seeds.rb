@@ -19,7 +19,7 @@ end
   FactoryGirl.create :contacto
 end
 
-6.times do
+75.times do
   FactoryGirl.create :imagen
 end
 

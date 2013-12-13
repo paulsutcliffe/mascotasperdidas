@@ -11,6 +11,7 @@ class Publicacion < ActiveRecord::Base
   has_many :usuario, :through => :transacciones
   accepts_nested_attributes_for :imagenes
   accepts_nested_attributes_for :portada, :allow_destroy => true
+  paginates_per 5
 
   #geocoded_by :direccion
   #after_validation :geocode, :if => :direccion_changed?

@@ -10,7 +10,7 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def index
-    @publicaciones = params[:tipo] ? Publicacion.where("tipo = ?", params[:tipo]) : Publicacion.all
+    @publicaciones = params[:tipo] ? Publicacion.where("tipo = ?", params[:tipo]).page(params[:page]) : Publicacion.all.page(params[:page])
     respond_to do |format|
       format.html
       format.js {}
@@ -38,7 +38,7 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def resultado_de_busqueda
-    @publicaciones = Publicacion.buscar(params[:tipo], params[:raza], params[:ciudad], params[:distrito], params[:fecha])
+    @publicaciones = Publicacion.buscar(params[:tipo], params[:raza], params[:ciudad], params[:distrito], params[:fecha]).page(params[:page])
   end
   def enviar_informacion
     @publicacion = Publicacion.find(params[:id])
@@ -57,4 +57,5 @@ class PublicacionesController < InheritedResources::Base
   def transaccion_realizada
     
   end
+
 end

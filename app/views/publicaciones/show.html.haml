@@ -5,32 +5,52 @@
 
     .region-inner
       .region
-        .column
-          %h2.title
-            = @publicacion.animal + ' ' + @publicacion.raza
-            %span.bolded
-              = @publicacion.sexo + ' ' + @publicacion.edad
+        .wrapper
+          .b-line
+            .row
+              .column
+                %h2.title.no-margin
+                  = @publicacion.animal + ' ' + @publicacion.raza
+                  %span.bolded
+                    = @publicacion.sexo + ', ' + @publicacion.edad
 
-        .column
-          - unless @publicacion.recompensa == 0
-            %b Recompensa:
-            = @publicacion.recompensa
+              .column
+                .rect
+                  %b
+                    Recompensa
+                  S/.250.00
+                - unless @publicacion.recompensa == 0
+                  %b Recompensa:
+                  = @publicacion.recompensa
 
     .region-inner
       .region
-        .column
-          Visto por última vez
+        .wrapper
+          .b-line
+            .row
+              .column
+                .font-style-2.p-top
+                  Visto por última vez
 
-        .column
-          Contactar
+              .column.child-align-right
+                = link_to 'Contactar', '', class: 'btn btn-info cyan'
+
+                .compartir
+                  Compartir en: 
+                  = link_to content_tag(:i, '', class: 'icon facebook'), '', target: '_blank'
+                  = link_to content_tag(:i, '', class: 'icon twitter'), '', target: '_blank'
+
 
     #region-publicacion-imagenes.region-inner
       .region
-        - @publicacion.imagenes.each do |imagen|
-          .item
-            = image_tag imagen.imagen_url(:thumb)
+        .wrapper
+          .b-line
+            .row
+              - @publicacion.imagenes.each do |imagen|
+                .item
+                  = image_tag imagen.imagen_url(:thumb)
 
-    .region-inner
+    #region-publicacion-descripcion.region-inner
       .region
         .column
           %h2.title Descripción
@@ -39,7 +59,7 @@
         .column
           %h2.title Ubicación donde fue perdido
 
-    .region-inner
+    #region-back.region-inner.wrapper.m-top-m 
       = link_to 'Regresar', publicaciones_path, class: 'btn-back'
 
 

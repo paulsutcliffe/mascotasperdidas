@@ -177,6 +177,13 @@
 
 
 #region-publicacion {
+  .wrapper {
+    @extend .col-lg-12;
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+  }
+
  .column {
     @extend .col-lg-6;
     @extend .col-md-6;
@@ -193,4 +200,20 @@
     img {@extend .img-full}
     @extend .m-bottom-s
   }
+}
+
+#region-publicacion-imagenes {
+  padding-top: 10px; padding-bottom: 10px; float: left; clear: left;
+  .wrapper {
+    @extend .col-lg-12;
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+
+  }  
+}
+
+#region-publicacion-descripcion {
+  float: left; clear: left;
+
 }

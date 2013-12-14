@@ -1,18 +1,18 @@
 %ul.nav.nav-pills.navbar-right
   - if current_admin
-    %li
+    %li.link.first
       = link_to 'Cerrar Sesión', destroy_admin_session_path, :method => :delete
   - else
     - if current_usuario
-      %li
+      %li.link.first
         = link_to 'Cerrar Sesión', destroy_usuario_session_path, :method => :delete
-      %li
-        = link_to '/Mis Publicaciones', mis_publicaciones_path
+      %li.link
+        = link_to 'Mis Publicaciones', mis_publicaciones_path
     - else
-      %li
+      %li.link.first
         = link_to 'Registrate', new_usuario_registration_path
-      %li
-        = link_to '/Ingresa', new_usuario_session_path
+      %li.link
+        = link_to 'Ingresa', new_usuario_session_path
   %li 
     = link_to content_tag(:i, '', class: 'icon facebook'), ''
   %li 

@@ -1,17 +1,12 @@
-- page_title!('Editando contacto')
+- page_title!('Contacto')
 
 #region-contactos.container
 
   .region
     .region-title
       %h1
-        Creando
-        %b
-          contacto
+        Contacto
 
   .region
     = render 'form'
 
-  .region
-    .admin-controls
-      = link_to 'Regresar', 'javascript:history.back(-1)', class: 'btn btn-warning'

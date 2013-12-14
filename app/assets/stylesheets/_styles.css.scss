@@ -1,4 +1,8 @@
 .nav > li > a {padding: 0}
+#menu-top .nav > li.link {border-left: 1px solid black; margin-left: 18px; margin-right: 10px; padding-left: 10px}
+#menu-top .nav > li.link.first {border-left: 0}
+#menu-top .nav > li > a {color: #545553}
+
 .navbar-default .navbar-nav > li {margin-left: 18px}
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > span {background: $cyan; color: white; text-transform: uppercase; border-radius: 17px;

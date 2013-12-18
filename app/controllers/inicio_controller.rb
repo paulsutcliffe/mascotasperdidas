@@ -4,5 +4,6 @@ class InicioController < ApplicationController
     @slides = Slide.all
     @testimonio = Testimonio.random
     @video = Video.first
+    @contacto = Contacto.new
   end
 end

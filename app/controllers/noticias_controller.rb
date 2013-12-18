@@ -12,4 +12,13 @@ class NoticiasController < InheritedResources::Base
   def destroy
     destroy! { noticias_path }
   end
+
+  def index
+    @tags = Noticia.tag_counts_on(:tags)
+    if params[:tag]
+      @noticias = Noticia.tagged_with(params[:tag])
+    else
+      @noticias = Noticia.all
+    end
+  end
 end

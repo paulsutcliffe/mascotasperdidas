@@ -36,6 +36,7 @@ gem "capistrano"
 
 # To use debugger
 # gem 'debugger'
+gem 'acts-as-taggable-on'
 gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-facebook'

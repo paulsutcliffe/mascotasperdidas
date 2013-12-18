@@ -8,23 +8,14 @@
       - if current_admin
         .admin-control
           = link_to 'Crear Noticia', new_noticia_path, class: 'btn btn-primary'
-
-
-  
   
   .region
     .region-inner.sidebar.region-title
       %h2.title Tags
       %ul.taglist
-        %li
-          = link_to 'Perro', ''
-        %li
-          = link_to 'Perro', ''
-        %li
-          = link_to 'Perro', ''
-        %li
-          = link_to 'Perro', ''
-
+        - @tags.each do |tag|
+          %li
+            = link_to tag.name, tag_path(tag.name)
 
     .region-inner
       - @noticias.each do |noticia|

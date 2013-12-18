@@ -6,6 +6,8 @@ Mascotasperdidas::Application.routes.draw do
 
   get "politicas/index"
 
+  get 'tags/:tag', to: 'noticias#index', as: :tag
+
   get "publicaciones/enviar_informacion"
 
   match '/publicaciones/resultado-de-busqueda' => 'publicaciones#resultado_de_busqueda', via: :get, as: 'resultado_de_busqueda'

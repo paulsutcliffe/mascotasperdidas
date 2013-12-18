@@ -58,11 +58,16 @@
 #page-search {
   position: relative; margin-top: -130px;
   .form-group {
-    @extend .col-lg-12;
-    @extend .col-md-12;
-    @extend .col-sm-12;
-    @extend .col-xs-12;
+    @extend .col-lg-8;
+    @extend .col-md-8;
+    @extend .col-sm-8;
+    @extend .col-xs-8;
     
+    @extend .col-lg-offset-2;
+    @extend .col-md-offset-2;
+    @extend .col-sm-offset-2;
+    @extend .col-xs-offset-2;
+
     @extend .custom-box;
 
     .inner {min-height: 175px; min-height: 50px}

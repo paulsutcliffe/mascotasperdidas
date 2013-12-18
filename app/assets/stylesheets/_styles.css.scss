@@ -104,14 +104,17 @@ padding: 3px 20px; text-transform: uppercase; @include inline-block }
 
 #page-search {
   .not-front & {
-    margin-top: 30px;
+    margin-top: -50px;
   }
   .region-inner,
-  .form-group {padding-left: 0; padding-right: 0}
+  .form-group {padding-left: 0; padding-right: 0; .inner {float: left; width: 100%; clear: left}}
+  .form-group .form-group {margin-left: 0; float: left; width: 100%}
    label {
     text-align: left; @include inline-block
   }
 }
+
+.imagen-fija img {width: 100%}
 
 
 .carousel-indicators {

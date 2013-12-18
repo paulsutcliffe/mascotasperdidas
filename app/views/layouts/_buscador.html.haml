@@ -1,25 +1,11 @@
-= form_tag resultado_de_busqueda_path, method: :get do
-
+= form_tag resultado_de_busqueda_path, method: :get, class: 'form' do
 
   .form-group.form-group-first
     .inner
-      %label
-        ¿PERDIDO O ENCONTRADO?
-      = select_tag :tipo, options_for_select(Publicacion::TIPOS.collect { |i| [i]}), :prompt => "Perdido/Encontrado", class: 'form-control'
-      =# select_tag :animal, options_for_select(Animal.all.collect { |animal| [animal.nombre]}), :prompt => "Animal", class: 'form-control'
-      = select_tag :raza, options_for_select(Raza.all.collect { |raza| [raza.nombre]}), :prompt => "Raza", class: 'form-control'
-
-
-  .form-group.form-group-second
-    .inner
-      %label
-        ¿DÓNDE?
-      = select_tag :ciudad, options_for_select(Ciudad.all.collect { |ciudad| [ciudad.nombre]}), :prompt => "Ciudad", class: 'form-control'
-      = select_tag :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), :prompt => "Distrito", class: 'form-control'
-
-  .form-group.form-group-third
-    .inner
-      %label
-        ¿CUÁNDO?
-      = date_select :fecha, :use_month_names, :discard_day => true, :discard_year => true, class: 'form-control'
-      = submit_tag "BUSCAR", name: nil
+      .col-sm-8
+        = text_field_tag :busqueda, params[:busqueda], class: 'form-control'
+      .col-sm-2
+        = submit_tag "BUSCAR", name: nil, class: 'btn btn-default'
+      %br
+      = check_box_tag :tipo, 'Perdido'
+      = check_box_tag :tipo, 'Encontrado'

@@ -38,7 +38,7 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def resultado_de_busqueda
-    @publicaciones = Publicacion.buscar(params[:tipo], params[:raza], params[:ciudad], params[:distrito], params[:fecha]).page(params[:page])
+    @publicaciones = Publicacion.buscar(params[:busqueda])
   end
   def enviar_informacion
     @publicacion = Publicacion.find(params[:id])
@@ -55,7 +55,7 @@ class PublicacionesController < InheritedResources::Base
     end
   end
   def transaccion_realizada
-    
+
   end
 
 end

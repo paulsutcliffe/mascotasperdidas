@@ -1,6 +1,6 @@
 /* TEAM */
 
-Your title: Your name.
+Your title: Paul.
 Site: email, link to a contact form, etc.
 Twitter: your Twitter username.
 Location: City, Country.

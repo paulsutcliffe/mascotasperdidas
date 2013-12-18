@@ -1,13 +1,17 @@
 - if params[:controller] == 'inicio'
   #page-carousel
-    #carousel-generic.carousel.portada
+    #carousel-generic.carousel.vertical.slide.portada{:"data-ride" => 'carousel'}
     
       %ol.carousel-indicators
         - @portadas.each_with_index do |portada, index|
           - if index == 0
-            %li.active{:'data-target' => '#carousel-generic', :'data-portada-to' => index}
+            %li.active{:'data-target' => '#carousel-generic', :'data-slide-to' => index}
           - else
-            %li{:'data-target' => '#carousel-generic', :'data-portada-to' => index}
+            %li{:'data-target' => '#carousel-generic', :'data-slide-to' => index}
+
+
+
+
     
       .carousel-inner
         - @portadas.each_with_index do |portada, index|

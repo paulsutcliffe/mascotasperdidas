@@ -63,15 +63,13 @@
         %br
         por favor, no dejes de buscarme.
 
-#inicio-publicidad
+#inicio-ausp.container
   .region
     .region-title
       %h2.title Mascotas Perdidas es auspciado por
 
   .region-inner
-    - @slides.each do |slide|
-      = image_tag slide.imagen_url(:full)
-
+    = render 'publicidad_carousel'
 
 #inicio-testimonios.container
   .region

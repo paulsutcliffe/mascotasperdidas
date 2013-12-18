@@ -32,6 +32,8 @@ padding: 3px 20px; text-transform: uppercase; @include inline-block }
   img {width: 100%}
 }
 
+.admin-controls {margin-bottom: 20px}
+
 .rect {padding: 5px; background: $yellow; float: right; font-size: 16px; text-transform: uppercase; line-height: 100%;
   position: relative; top: -3px;
   b {color: #666; font-weight: 300}
@@ -89,7 +91,7 @@ padding: 3px 20px; text-transform: uppercase; @include inline-block }
 .btn.btn-info.to-right {float: right; clear: right; }
 
 .btn-back {
-  @extend .btn; @extend .btn-default;
+  @extend .btn; @extend .btn-default; text-transform: uppercase;
 }
 
 

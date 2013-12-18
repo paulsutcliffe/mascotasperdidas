@@ -7,6 +7,7 @@ body {line-height: 145%; color: $black}
 body,
 a, p, ul,
 h1, h2, h3, h4, h5, h6 {font-family: 'Cabin', sans-serif; margin: 0}
+p {font-size: 18px; line-height: 120%; margin-bottom: 20px}
 
 
 .heading-default {margin-bottom: 25px; text-transform: uppercase; font-weight: bold; color: $black}
@@ -32,3 +33,5 @@ h2.title.no-margin {margin: 0}
 .bolded {font-size: 18px}
 .font-style-2 {font-size: 18px; text-transform: uppercase; color: #383938}
 .p-top {padding-top: 15px}
+
+.item-fecha {padding: 15px 0 20px; font-weight: bold}

@@ -1,24 +1,40 @@
-#region-noticias.container
+#region-noticias.container.sidebar-region
   .region
     .region-title
-      %h1= page_title!('Noticia')
+      %h1.page-title Noticia
+
 
   .region
-    %p
-      %b Titulo:
-      = @noticia.titulo
-    %p
-      %b Contenido:
-      = @noticia.contenido
-    %p
-      %b Foto:
-      = image_tag @noticia.foto_url(:regular)
-    %p
-      %b Video:
-      = @noticia.video_html
+    .region-inner.sidebar.region-title
+      %h2.title Tags
+      %ul.taglist
+        %li
+          = link_to 'Perro', ''
+        %li
+          = link_to 'Perro', ''
+        %li
+          = link_to 'Perro', ''
+        %li
+          = link_to 'Perro', ''
 
-  .region
-    - if current_admin
-      .admin-controls
-        = link_to 'Editar', edit_noticia_path(@noticia), class: 'btn btn-success'
-    = link_to 'Regresar', noticias_path, class: 'btn btn-warning'
+
+
+    .region-inner    
+
+      %h2.title= page_title! @noticia.titulo
+      - if current_admin
+        .admin-controls
+          = link_to 'Editar', edit_noticia_path(@noticia), class: 'btn btn-success'
+
+      .item-image-wrapper
+        - if @noticia.foto_url
+          = image_tag @noticia.foto_url(:regular), class: 'img-responsive'
+        - else
+          = @noticia.video_html
+
+      .item-fecha.font-style-2 
+        Hace días
+      = paragraph(@noticia.contenido)
+      
+  
+      = link_to 'Regresar', noticias_path, class: 'btn btn-warning'

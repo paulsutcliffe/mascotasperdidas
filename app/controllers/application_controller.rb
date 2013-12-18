@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
   end
 
   def bodyid
-    @bodyid = params[:controller].parameterize
+    @bodyid = params[:controller].parameterize + '-page'
   end
 
   def bodyclass
-    @action = params[:action].parameterize
+    @action = params[:action].parameterize + '-class'
 
     if params[:controller] == 'home'
       @front = 'front'

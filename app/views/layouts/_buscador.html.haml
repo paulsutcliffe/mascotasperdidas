@@ -2,10 +2,16 @@
 
   .form-group.form-group-first
     .inner
-      .col-sm-8
-        = text_field_tag :busqueda, params[:busqueda], class: 'form-control'
-      .col-sm-2
-        = submit_tag "BUSCAR", name: nil, class: 'btn btn-default'
-      %br
-      = check_box_tag :tipo, 'Perdido'
-      = check_box_tag :tipo, 'Encontrado'
+      .form-group
+        .col-sm-8
+          = text_field_tag :busqueda, params[:busqueda], class: 'form-control'
+        .col-sm-2
+          = submit_tag "BUSCAR", name: nil, class: 'btn btn-default'
+
+      .form-group.form-check.form-last
+        .col-sm-8
+          %label Perdido
+          = check_box_tag :tipo, 'Perdido'
+      
+          %label Encontrado
+          = check_box_tag :tipo, 'Encontrado'

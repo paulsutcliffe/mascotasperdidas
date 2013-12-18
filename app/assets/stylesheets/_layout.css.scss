@@ -58,14 +58,14 @@
 #page-search {
   position: relative; margin-top: -130px;
   .form-group {
-    @extend .col-lg-4;
-    @extend .col-md-4;
-    @extend .col-sm-4;
+    @extend .col-lg-12;
+    @extend .col-md-12;
+    @extend .col-sm-12;
     @extend .col-xs-12;
     
     @extend .custom-box;
 
-    .inner {min-height: 175px;}
+    .inner {min-height: 175px; min-height: 50px}
   }
   .form-group-first .inner {background: $black}
   .form-group-second .inner {background: $cyan2}

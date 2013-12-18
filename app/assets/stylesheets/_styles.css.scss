@@ -88,10 +88,29 @@ padding: 3px 20px; text-transform: uppercase; @include inline-block }
   &:hover {background: $yellow2}
 }
 
+.form-group {overflow: hidden; padding-left: 0; padding-right: 0}
+.form-check input {margin-right: 15px}
+.form-last {
+  &,
+  label,
+  input {margin-bottom: 0 !important}
+}
+
 .btn.btn-info.to-right {float: right; clear: right; }
 
 .btn-back {
   @extend .btn; @extend .btn-default; text-transform: uppercase;
+}
+
+#page-search {
+  .not-front & {
+    margin-top: 30px;
+  }
+  .region-inner,
+  .form-group {padding-left: 0; padding-right: 0}
+   label {
+    text-align: left; @include inline-block
+  }
 }
 
 

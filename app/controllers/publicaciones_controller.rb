@@ -39,7 +39,13 @@ class PublicacionesController < InheritedResources::Base
 
   def resultado_de_busqueda
     @publicaciones = Publicacion.buscar(params[:busqueda])
+    if @publicaciones.class == Array
+      @publicaciones = Kaminari.paginate_array(@publicaciones).page(params[:page]).per(5)
+    else
+      @publicaciones = @publicaciones.page(params[:page]).per(5)
+    end
   end
+
   def enviar_informacion
     @publicacion = Publicacion.find(params[:id])
     @transaccion = Transaccion.create(fecha: Time.now)

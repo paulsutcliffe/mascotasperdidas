@@ -7,5 +7,7 @@
   .region
     .region-inner
       #publicaciones
-        %ul.publicaciones-list    
+        %ul.publicaciones-list
           = render @publicaciones
+
+    = paginate @publicaciones

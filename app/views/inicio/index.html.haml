@@ -70,6 +70,7 @@
       %h2.title Testimonio
 
     .region-inner
-      = image_tag @testimonio.foto_url(:thumb)
+      = image_tag @testimonio.foto_url(:thumb), class: 'img-circle'
 
       = paragraph(@testimonio.contenido)
+      = @testimonio.nombre

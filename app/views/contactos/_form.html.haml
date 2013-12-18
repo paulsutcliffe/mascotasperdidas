@@ -6,21 +6,23 @@
         - @contacto.errors.full_messages.each do |msg|
           %li= msg
 
-  .form-group
-    = f.label :nombre, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :nombre, class: 'form-control'
-  .form-group
-    = f.label :telefono, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :telefono, class: 'form-control'
-  .form-group
-    = f.label :email, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :email, class: 'form-control'
-  .form-group
-    = f.label :mensaje, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_area :mensaje, class: 'form-control'
-  .actions
-    = f.submit 'Guardar', class: 'btn btn-default'
+  %fieldset
+    .form-group
+      = f.label :nombre, class: 'col-sm-2 control-label hide'
+      .col-sm-10
+        = f.text_field :nombre, class: 'form-control', placeholder: 'Nombre'
+    .form-group
+      = f.label :telefono, class: 'col-sm-2 control-label hide'
+      .col-sm-10
+        = f.text_field :telefono, class: 'form-control', placeholder: 'Teléfono'
+    .form-group
+      = f.label :email, class: 'col-sm-2 control-label hide'
+      .col-sm-10
+        = f.text_field :email, class: 'form-control', placeholder: 'E-mail'
+  %fieldset
+    .form-group
+      = f.label :mensaje, class: 'col-sm-2 control-label hide'
+      .col-sm-10
+        = f.text_area :mensaje, class: 'form-control', placeholder: 'Mensaje', rows: '6'
+    .actions
+      = f.submit 'Guardar', class: 'btn btn-default'

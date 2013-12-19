@@ -8,7 +8,7 @@ class Publicacion < ActiveRecord::Base
   has_one :plan
   has_many :portada
   has_many :transacciones
-  has_many :usuario, :through => :transacciones
+  has_many :usuarios, :through => :transacciones
   accepts_nested_attributes_for :imagenes
   accepts_nested_attributes_for :portada, :allow_destroy => true
   paginates_per 5

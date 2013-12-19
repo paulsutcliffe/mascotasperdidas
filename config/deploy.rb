@@ -1,9 +1,12 @@
 #coding: utf-8
-require "bundler/capistrano"
-require "rvm/capistrano"
+require 'bundler/capistrano'
+load 'deploy/assets'
+before 'deploy', 'rvm:install_rvm'
 
-set :rvm_ruby_string, '1.9.3'
-set :rvm_type, :user  # Don't use system-wide RVM
+ssh_options[:forward_agent] = true
+set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"") # Read from local system
+require 'rvm/capistrano'
+set :rvm_ruby_string, '1.9.3-p484'
 
 server "162.243.112.200", :web, :app, :db, primary: true
 
@@ -18,7 +21,6 @@ set :repository, "git@github.com:paulsutcliffe/#{application}.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
 
 namespace :bundler do
   desc "|DarkRecipes| Installs bundler gem to your server"

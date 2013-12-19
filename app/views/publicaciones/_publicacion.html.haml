@@ -28,7 +28,7 @@
     - unless params[:action] == 'mis_publicaciones'
       = link_to 'Contactar', publicaciones_enviar_informacion_path(id: publicacion.id), class: 'btn btn-info to-right cyan'
 
-  - if current_admin or current_usuario
+  - if current_admin or params[:action] == 'mis_publicaciones'
     = link_to 'Editar', edit_publicacion_path(publicacion), class: 'btn btn-success'
     = link_to 'Eliminar', publicacion, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
 

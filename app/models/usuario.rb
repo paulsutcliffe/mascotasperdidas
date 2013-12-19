@@ -7,6 +7,7 @@ class Usuario < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :publicaciones, :through => :transacciones
+  has_many :publicaciones
   has_many :transacciones
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :telefono, :direccion_attributes,:provider, :uid, :name

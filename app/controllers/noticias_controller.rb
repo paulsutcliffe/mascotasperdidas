@@ -14,11 +14,17 @@ class NoticiasController < InheritedResources::Base
   end
 
   def index
+    @noticias = Noticia.order(@noticias).page(params[:page])
     @tags = Noticia.tag_counts_on(:tags)
     if params[:tag]
       @noticias = Noticia.tagged_with(params[:tag])
     else
       @noticias = Noticia.all
     end
+  end
+
+  def show
+    @noticia = Noticia.find(params[:id])
+    @tags = @noticia.tags
   end
 end

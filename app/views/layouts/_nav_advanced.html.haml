@@ -9,26 +9,53 @@
   / Collect the nav links, forms, and other content for toggling
   .collapse.navbar-collapse.navbar-ex1-collapse
     %ul.nav.navbar-nav
-      %li
-        = link_to_unless_current 'Perdidos', publicaciones_path(tipo: 'Perdido') do
-          %span
-            Perdidos
-      %li
-        = link_to_unless_current 'Encontrados', publicaciones_path(tipo: 'Encontrado') do
-          %span
-            Encontrados
-      %li
-        = link_to_unless_current 'Blog', noticias_path do
-          %span
-            Blog
-
       - if current_admin
         %li
-          = link_to_unless_current 'Contacto', contactos_path do
+          = link_to_unless_current 'Portadas', portadas_path do
             %span
-              Contacto
+              Portadas
+        %li
+          = link_to_unless_current 'Publicaciones', publicaciones_path do
+            %span
+              Publicacion
+        %li
+          = link_to_unless_current 'Noticias', noticias_path do
+            %span
+              Noticias
+        %li
+          = link_to_unless_current 'Testimonios', testimonios_path do
+            %span
+              Testimonios
+        %li
+          = link_to_unless_current 'Videos', videos_path do
+            %span
+              Videos
+        %li
+          = link_to_unless_current 'Mensajes', contactos_path do
+            %span
+              Mensajes
+
+
 
       - else
+        %li
+          = link_to_unless_current 'Perdidos', publicaciones_path(tipo: 'Perdido') do
+            %span
+              Perdidos
+        %li
+          = link_to_unless_current 'Encontrados', publicaciones_path(tipo: 'Encontrado') do
+            %span
+              Encontrados
+        %li
+          = link_to_unless_current 'Publicar', new_publicacion_path do
+            %span
+              Publicar
+
+        %li
+          = link_to_unless_current 'Blog', noticias_path do
+            %span
+              Blog
+
         %li
           = link_to_unless_current 'Contacto', new_contacto_path do
             %span

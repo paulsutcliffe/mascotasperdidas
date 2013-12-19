@@ -8,14 +8,9 @@
     .region-inner.sidebar.region-title
       %h2.title Tags
       %ul.taglist
-        %li
-          = link_to 'Perro', ''
-        %li
-          = link_to 'Perro', ''
-        %li
-          = link_to 'Perro', ''
-        %li
-          = link_to 'Perro', ''
+        - @tags.each do |tag|
+          %li
+            = link_to tag.name, tag_path(tag.name) 
 
 
 

@@ -25,7 +25,7 @@
       .region
         - @publicaciones.each do |publicacion|
           .item
-            = image_tag publicacion.imagenes.first.imagen_url(:thumb)
+            = link_to image_tag(publicacion.imagenes.first.imagen_url(:thumb)), publicacion
     .region-inner.sidebar
       %h2.title Publica ya
       Es muy fácil

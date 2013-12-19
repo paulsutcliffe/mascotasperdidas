@@ -10,7 +10,7 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def index
-    @publicaciones = params[:tipo] ? Publicacion.where("tipo = ?", params[:tipo]).page(params[:page]) : Publicacion.all.page(params[:page])
+    @publicaciones = params[:tipo] ? Publicacion.where("tipo = ?", params[:tipo]).page(params[:page]) : Publicacion.page(params[:page])
     respond_to do |format|
       format.html
       format.js {}

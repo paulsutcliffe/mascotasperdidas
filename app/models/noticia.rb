@@ -13,4 +13,6 @@ class Noticia < ActiveRecord::Base
     vimeo(:width => 620, :height => 349)
   end
 
+  paginates_per 5
+
 end

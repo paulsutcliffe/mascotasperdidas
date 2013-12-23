@@ -12,8 +12,8 @@
       = publicacion.raza
 
     .item-visto
-      Visto por última vez el en
-      = publicacion.fecha
+      Visto por última vez hace
+      = time_ago_in_words(publicacion.fecha)
 
     .item-edad
       = publicacion.sexo

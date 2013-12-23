@@ -28,7 +28,7 @@
           = @noticia.video_html
 
       .item-fecha.font-style-2 
-        Hace días
+        = "publicado hace" + ' ' + time_ago_in_words(noticia.fecha)
       = paragraph(@noticia.contenido)
       
   

@@ -8,7 +8,7 @@
       - if current_admin
         .admin-control
           = link_to 'Crear Noticia', new_noticia_path, class: 'btn btn-primary'
-  
+
   .region
     .region-inner.sidebar.region-title
       %h2.title Tags
@@ -18,16 +18,9 @@
             = link_to tag.name, tag_path(tag.name)
 
     .region-inner
-      - @noticias.each do |noticia|
-        .item
-          %h2.title
-            = link_to noticia.titulo, noticia
-          .item-image-wrapper
-            .item-paragraph
-              = paragraph_truncate(noticia.contenido, 200)
-            = image_tag noticia.foto_url(:regular)
-          %span.since Hace 5 días
-          = link_to 'Ver más', noticia, class: 'btn btn-info to-right'
-          - if current_admin
-            = link_to 'Editar', edit_noticia_path(noticia), class: 'btn btn-success'
-            = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'
+      #noticias
+        %ul.noticias-list
+          = render @noticias
+
+    = paginate @noticias
+

@@ -1,0 +1,13 @@
+- @videos.each do |video|
+  %tr
+    %td= video.link_html
+    %td
+      - unless @videos.first.position == video.position
+        = link_to(videos_move_path(method: 'move_higher', video_id: video.id)) do
+          %i.glyphicon.glyphicon-arrow-up.btn-lg
+      - unless video.position == @videos.last.position
+        = link_to(videos_move_path(method: 'move_lower', video_id: video.id)) do
+          %i.glyphicon.glyphicon-arrow-down.btn-lg
+    - if current_admin
+      %td= link_to 'Editar', edit_video_path(video), class: 'btn btn-success'
+      %td= link_to 'Eliminar', video, :method => :delete, :data => { :confirm => '¿Estás Seguro?' }, class: 'btn btn-danger'

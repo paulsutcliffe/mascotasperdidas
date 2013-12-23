@@ -36,6 +36,7 @@ gem "capistrano"
 
 # To use debugger
 # gem 'debugger'
+gem 'acts_as_list'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
 gem 'omniauth'

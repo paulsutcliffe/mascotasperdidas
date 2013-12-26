@@ -1,3 +1,4 @@
+#coding: utf-8
 class ContactosController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [:new,:create]
 
@@ -6,11 +7,11 @@ class ContactosController < InheritedResources::Base
       success.html do
         Notificador.mensaje_recibido(@contacto).deliver
 
-        flash[:notice] = "Tu mensaje fie eviado con exito"
+        flash[:notice] = "Tu mensaje fue enviado con éxito"
         redirect_to new_contacto_path
       end
       failure.html do
-        flash[:notice] = "No ha sido enciado al mensaje."
+        flash[:notice] = "No ha sido enviado al mensaje."
         render :accion => "new"
       end
     end

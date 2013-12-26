@@ -1,7 +1,7 @@
 - content_for :javascript do
   = javascript_include_tag 'nested_form.js'
 
-- page_title!('Editando publicacion')
+- page_title!('Creando publicación')
 
 #region-publicaciones.container
 
@@ -10,7 +10,12 @@
       %h1
         Creando
         %b
-          publicacion
+          publicación
+
+  .region
+    %ol.breadcrumb
+      %li.active 1 Características
+      %li 2 Donde se perdió
 
   .region
     = render 'form'

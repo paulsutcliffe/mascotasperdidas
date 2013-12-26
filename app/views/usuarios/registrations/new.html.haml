@@ -10,6 +10,10 @@
     = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { class: 'form-horizontal'}) do |f|
       = devise_error_messages!
       .form-group
+        = f.label :name, 'Nombre', class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :name, class: 'form-control'
+      .form-group
         = f.label :email, class: 'col-sm-2 control-label'
         .col-sm-10
           = f.email_field :email, :autofocus => true, class: 'form-control'
@@ -25,28 +29,6 @@
         = f.label :telefono, class: 'col-sm-2 control-label'
         .col-sm-10
           = f.text_field :telefono, class: 'form-control'
-      - resource.build_direccion if resource.direccion.nil?
-      = f.fields_for(:direccion) do |direccion_form|
-        .form-group
-          = direccion_form.label :provincia, class: 'col-sm-2 control-label'
-          .col-sm-10
-            = direccion_form.select :provincia, options_for_select(Provincia.all.collect { |provincia| [provincia.nombre]}), class: 'form-control'
-        .form-group
-          = direccion_form.label :ciudad, class: 'col-sm-2 control-label'
-          .col-sm-10
-            = direccion_form.select :ciudad, options_for_select(Ciudad.all.collect { |ciudad| [ciudad.nombre]}), class: 'form-control'
-        .form-group
-          = direccion_form.label :distrito, class: 'col-sm-2 control-label'
-          .col-sm-10
-            = direccion_form.select :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), class: 'form-control'
-        .form-group
-          = direccion_form.label :calle, class: 'col-sm-2 control-label'
-          .col-sm-10
-            = direccion_form.text_field :calle, class: 'form-control'
-        .form-group
-          = direccion_form.label :referencia, class: 'col-sm-2 control-label'
-          .col-sm-10
-            = direccion_form.text_area :referencia, class: 'form-control'
 
       .admin-controls
         %div= f.submit "Registrarse", class: 'btn btn-default'

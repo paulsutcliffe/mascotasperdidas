@@ -1,6 +1,6 @@
 class Usuarios::RegistrationsController < Devise::RegistrationsController
   def new
-    @usuario = Usuario.new(:direccion => [Direccion.new])
+    @usuario = Usuario.new
     super
   end
 

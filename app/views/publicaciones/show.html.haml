@@ -33,9 +33,9 @@
                 = link_to 'Contactar', '', class: 'btn btn-info cyan'
 
                 .compartir
-                  Compartir en: 
-                  = link_to content_tag(:i, '', class: 'icon facebook'), '', target: '_blank'
-                  = link_to content_tag(:i, '', class: 'icon twitter'), '', target: '_blank'
+                  Compartir en:
+                  = link_to content_tag(:i, '', class: 'icon facebook'), 'https://www.facebook.com/sharer/sharer.php?u=' + request.original_url, target: '_blank'
+                  = link_to content_tag(:i, '', class: 'icon twitter'), 'http://twitter.com/share?url=' + request.original_url + '&text=' + @publicacion.nombre + ' ' + @publicacion.tipo + ' ' + @publicacion.animal + ' ' + @publicacion.raza + ' ' + request.original_url, target: '_blank'
 
 
     #region-publicacion-imagenes.region-inner
@@ -53,8 +53,12 @@
           %h2.title Descripción
           = paragraph(@publicacion.descripcion)
 
+        .column
+          %h2.title Comentarios
+          = render 'comentarios_fb'
 
-    #region-back.region-inner.wrapper.m-top-m 
+
+    #region-back.region-inner.wrapper.m-top-m
       = link_to 'Regresar', publicaciones_path, class: 'btn-back'
 
 
@@ -80,4 +84,4 @@
     - if current_admin
       .admin-controls
         = link_to 'Editar', edit_publicacion_path(@publicacion), class: 'btn btn-success'
-    
+

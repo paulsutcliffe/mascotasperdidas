@@ -17,3 +17,4 @@
 //= require jquery.infinitescroll
 //= require publicaciones.js.coffee
 //= require noticias.js.coffee
+//= require facebook.js.coffee

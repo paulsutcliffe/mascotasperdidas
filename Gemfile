@@ -58,6 +58,7 @@ gem "friendly_id", "~> 4.0.9"
 gem "devise"
 gem "mini_magick"
 gem "carrierwave"
+gem 'cucumber-rails', :group => :test
 gem "faker", :group => :test
 gem "capybara", "~> 2.0.2", :group => :test
 gem "database_cleaner", "~> 0.9.1", :group => :test

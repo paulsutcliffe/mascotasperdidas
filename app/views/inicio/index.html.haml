@@ -7,13 +7,13 @@
   = render '/shared/twitter_follow'
   = render '/shared/google_plus_follow'
 
-
-#inicio-video.container
-  .region
-    .region-title
-      %h2.title Titulo del video testimonial
-    .region-inner
-      = @video.link_html
+- if @video
+  #inicio-video.container
+    .region
+      .region-title
+        %h2.title Titulo del video testimonial
+      .region-inner
+        = @video.link_html
 
 
 
@@ -71,13 +71,14 @@
   .region-inner
     = render 'publicidad_carousel'
 
-#inicio-testimonios.container
-  .region
-    .region-title
-      %h2.title Testimonio
-
-    .region-inner
-      = image_tag @testimonio.foto_url(:thumb), class: 'img-circle'
-
-      = paragraph(@testimonio.contenido)
-      = @testimonio.nombre
+- if @testimonio
+  #inicio-testimonios.container
+    .region
+      .region-title
+        %h2.title Testimonio
+  
+      .region-inner
+        = image_tag @testimonio.foto_url(:thumb), class: 'img-circle'
+  
+        = paragraph(@testimonio.contenido)
+        = @testimonio.nombre

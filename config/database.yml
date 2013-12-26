@@ -20,3 +20,6 @@ production:
   host: localhost
   database: mascotasperdidas_production
   <<: *defaults
+
+cucumber:
+  <<: *test

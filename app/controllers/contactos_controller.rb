@@ -1,6 +1,6 @@
 #coding: utf-8
 class ContactosController < InheritedResources::Base
-  before_filter :authenticate_admin!, :except => [:new,:create]
+  before_filter :authenticate_admin!, :except => [:new, :create]
 
   def create
     create! do |success, failure|

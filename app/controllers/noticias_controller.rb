@@ -1,8 +1,9 @@
+#coding: utf-8
 class NoticiasController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [:index, :show]
   
   def create
-    create! { noticias_path }
+    create!(notice: 'Noticia creada con éxito') { noticias_path }
   end
 
   def update

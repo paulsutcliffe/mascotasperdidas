@@ -1,5 +1,4 @@
 #language: es
-@javascript
 Característica: administración de los contenidos de la web
 
 Escenario: Ingresar como administrador
@@ -9,3 +8,9 @@ Escenario: Ingresar como administrador
   Y lleno el formulario con los datos del administrador
   Cuando presiono "Ingresar"
   Entonces debería ver "Has iniciado sesión."
+
+Escenario: Cerrar sesión del administrador
+  Dado que estoy en la página inicial
+  Y que he iniciado sesión como administrador
+  Cuando hago click en "Cerrar Sesión"
+  Entonces debería ver "Has cerrado la sesión."

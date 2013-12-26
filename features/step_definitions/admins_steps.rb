@@ -27,3 +27,15 @@ end
 Entonces(/^debería ver "(.*?)"$/) do |resultado|
   page.should have_content(resultado)
 end
+
+Dado(/^que he iniciado sesión como administrador$/) do
+  Admin.new(:email => email, :password => password, :password_confirmation => password).save!
+  visit('/cms/ingresar')
+  fill_in "E-mail", :with => email
+  fill_in "Contraseña", :with => password
+  click_button('Ingresar')
+end
+
+Cuando(/^hago click en "(.*?)"$/) do |link|
+  click_link(link)
+end

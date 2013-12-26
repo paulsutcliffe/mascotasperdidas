@@ -1,5 +1,5 @@
 .nav > li > a {padding: 0}
-#menu-top .nav > li.link {border-left: 1px solid black; margin-left: 18px; margin-right: 10px; padding-left: 10px}
+#menu-top .nav > li.link {border-left: 1px solid black; margin-right: 10px; padding-left: 10px}
 #menu-top .nav > li.link.first {border-left: 0}
 #menu-top .nav > li > a {color: #545553}
 
@@ -104,7 +104,7 @@ padding: 3px 20px; text-transform: uppercase; @include inline-block }
 
 #page-search {
   .front & {
-    margin-top: -55px; 
+    margin-top: -55px;
   }
   .not-front & {
     margin-top: -50px;

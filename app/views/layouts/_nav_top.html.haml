@@ -5,7 +5,7 @@
   - else
     - if current_usuario
       %li.link.first
-        = link_to 'Cerrar Sesión', destroy_usuario_session_path, :method => :delete
+        = link_to 'Cerrar Sesión', destroy_usuario_session_path, :id => 'sign_out', :method => :delete
       %li.link
         = link_to 'Mis Publicaciones', mis_publicaciones_path
     - else
@@ -13,9 +13,9 @@
         = link_to 'Registrate', new_usuario_registration_path
       %li.link
         = link_to 'Ingresa', new_usuario_session_path
-  %li 
+  %li
     = link_to content_tag(:i, '', class: 'icon facebook'), ''
-  %li 
+  %li
     = link_to content_tag(:i, '', class: 'icon vimeo'), ''
-  %li 
+  %li
     = link_to content_tag(:i, '', class: 'icon twitter'), ''

@@ -27,11 +27,7 @@ end
   FactoryGirl.create :noticia
 end
 
-12.times do
-  FactoryGirl.create :plan
-end
-
-12.times do
+4.times do
   FactoryGirl.create :portada
 end
 

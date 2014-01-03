@@ -1,5 +1,5 @@
 class Publicacion < ActiveRecord::Base
-  attr_accessible :animal, :descripcion, :edad, :fecha, :lat, :lng, :nombre, :portada, :raza, :recompensa, :sexo, :tipo, :imagenes_attributes, :status, :portada_attributes, :usuario_id
+  attr_accessible :animal, :descripcion, :edad, :fecha, :lat, :lng, :nombre, :portada, :raza, :recompensa, :sexo, :tipo, :imagenes_attributes, :status, :usuario_id
 
   extend FriendlyId
   belongs_to :usuario
@@ -10,7 +10,6 @@ class Publicacion < ActiveRecord::Base
   has_many :transacciones
   has_many :usuarios, :through => :transacciones
   accepts_nested_attributes_for :imagenes
-  accepts_nested_attributes_for :portada, :allow_destroy => true
   paginates_per 5
 
   #geocoded_by :direccion

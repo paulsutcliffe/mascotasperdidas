@@ -1,15 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :cargar_portada
   before_filter :form_del_footer
 
   def form_del_footer
     @contacto = Contacto.new
-  end
-
-  def cargar_portada
-    @portadas = Portada.limit(3)
   end
 
   def bodyid

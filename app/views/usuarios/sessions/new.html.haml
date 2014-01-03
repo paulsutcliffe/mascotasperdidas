@@ -9,11 +9,11 @@
     .region
     = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f|
       .form-group
-        = f.label :email, class: 'col-sm-2 control-label'
+        = f.label :email, "E-mail", class: 'col-sm-2 control-label'
         .col-sm-10
           = f.email_field :email, :autofocus => true, class: 'form-control'
       .form-group
-        = f.label :password, "contraseña", class: 'col-sm-2 control-label'
+        = f.label :password, "Contraseña", class: 'col-sm-2 control-label'
         .col-sm-10
           = f.password_field :password, class: 'form-control'
       .admin-controls

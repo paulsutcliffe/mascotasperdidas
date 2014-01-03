@@ -19,3 +19,15 @@ Hoy el perro mendigo se convirtió en príncipe y vive como rey. Come varias vec
   fill_in "Video", :with => "http://vimeo.com/82299487"
   fill_in "Tags", :with => "chili,dog"
 end
+
+Cuando(/^lleno "(.*?)" con "(.*?)"$/) do |campo, valor|
+  fill_in(campo, :with => valor)
+end
+
+Dado(/^que existe una noticia$/) do
+  Noticia.create(:titulo => "Chili dog el perro callejero",
+                 :contenido => "Todos los días deambulaba por las calles de Valparaíso, Chile, buscando comida y cariño de los marineros",
+                 :foto => File.new("features/support/chilidog.jpg"),
+                 :video => "http://vimeo.com/82299487",
+                 :tag_list => "chili,dog").save!
+end

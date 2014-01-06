@@ -35,11 +35,14 @@
     .col-sm-10
       = f.text_area :descripcion, class: 'form-control'
   .form-group
-    = f.label 'Imágenes', class: 'col-sm-2 control-label'
     .col-sm-10
       = f.fields_for :imagenes do |imagen_form|
-        = imagen_form.file_field :imagen
-        = imagen_form.link_to_remove "Eliminar Imagen", class: 'btn btn-danger'
+        .form-group
+          = f.label 'Imagen', class: 'col-sm-2 control-label'
+          .col-sm-8
+            = imagen_form.file_field :imagen, class: 'form-control'
+          .col-sm2
+            = imagen_form.link_to_remove "Eliminar Imagen", class: 'btn btn-danger'
       = f.link_to_add "Agregar Imagen", :imagenes, class: 'btn btn-primary'
   .form-group
     = f.label :edad, class: 'col-sm-2 control-label'

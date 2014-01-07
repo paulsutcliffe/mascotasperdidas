@@ -123,6 +123,7 @@ padding: 3px 20px; text-transform: uppercase; @include inline-block }
 .carousel-indicators {
   @include absolute(top, right, 20px, 20px); width: auto; left: auto;
   li, li.active {
+    border: 1px solid $gray2;
     float: none; display: block; margin-bottom: 10px;
   }
 }

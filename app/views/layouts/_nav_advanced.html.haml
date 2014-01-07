@@ -11,6 +11,10 @@
     %ul.nav.navbar-nav
       - if current_admin
         %li
+          = link_to_unless_current 'Slides', slides_path do
+            %span
+              Slide
+        %li
           = link_to_unless_current 'Portadas', portadas_path do
             %span
               Portadas

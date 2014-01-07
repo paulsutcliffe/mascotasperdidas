@@ -16,4 +16,8 @@ class ContactosController < InheritedResources::Base
       end
     end
   end
+
+  def destroy
+    destroy!(notice: "El mensaje se ha eliminado con éxito") { contactos_path }
+  end
 end

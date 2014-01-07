@@ -29,10 +29,10 @@ class VideosController < InheritedResources::Base
   end
 
   def update
-    update!(notice: "El video se ah editado con éxito") { videos_path }
+    update!(notice: "El video se ha editado con éxito") { videos_path }
   end
 
   def destroy
-    destroy!(notice: "El video se ah eliminado con éxito") { videos_path }
+    destroy!(notice: "El video se ha eliminado con éxito") { videos_path }
   end
 end

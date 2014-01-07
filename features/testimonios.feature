@@ -21,7 +21,7 @@ Escenario: Editar testimonio
   Y uso el contenido "Impedit harum laudantium doloribus autem eius. Qui non incidunt repudiandae omnis tempore. Est dolor inventore laudantium."
   Y uso el nombre "Bella Heathcote"
   Cuando presiono "Guardar"
-  Entonces debería ver "El testimonio se ah editado con éxito"
+  Entonces debería ver "El testimonio se ha editado con éxito"
 
 Escenario: Eliminar testimonio
   Dado que existe un testimonio
@@ -29,6 +29,6 @@ Escenario: Eliminar testimonio
   Y que estoy en la página inicial
   Cuando hago click en "Testimonios"
   Y hago click en "Eliminar"
-  Entonces debería ver "El testimonio se ah eliminado con éxito"
+  Entonces debería ver "El testimonio se ha eliminado con éxito"
 
 

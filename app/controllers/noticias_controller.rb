@@ -11,7 +11,7 @@ class NoticiasController < InheritedResources::Base
   end
 
   def destroy
-    destroy!(notice: 'La noticia se ah eliminado con éxito') { noticias_path }
+    destroy!(notice: 'La noticia se ha eliminado con éxito') { noticias_path }
   end
 
   def index

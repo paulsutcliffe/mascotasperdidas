@@ -19,7 +19,7 @@ Escenario: Editar portada
   Y hago click en "Editar"
   Y uso la imagen "peru.jpg"
   Cuando presiono "Guardar"
-  Entonces debería ver "La portada se ah editado con éxito"
+  Entonces debería ver "La portada se ha editado con éxito"
 
 Escenario: Eliminar portada
   Dado que existe una portada
@@ -27,5 +27,5 @@ Escenario: Eliminar portada
   Y que estoy en la página inicial
   Cuando hago click en "Portadas"
   Y hago click en "Eliminar"
-  Entonces debería ver "La portada se ah eliminado con éxito"
+  Entonces debería ver "La portada se ha eliminado con éxito"
 

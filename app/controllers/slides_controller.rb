@@ -6,10 +6,10 @@ class SlidesController < InheritedResources::Base
   end
 
   def update
-    update!(notice: 'El slide se ah editado con éxito') { slides_path }
+    update!(notice: 'El slide se ha editado con éxito') { slides_path }
   end
 
   def destroy
-    destroy!(notice: 'El slide se ah eliminado con éxito') { slides_path }
+    destroy!(notice: 'El slide se ha eliminado con éxito') { slides_path }
   end
 end

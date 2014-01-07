@@ -6,11 +6,11 @@ class PortadasController < InheritedResources::Base
   end
 
   def update
-    update!(notice: 'La portada se ah editado con éxito') { portadas_path }
+    update!(notice: 'La portada se ha editado con éxito') { portadas_path }
   end
 
   def destroy
-    destroy!(notice: 'La portada se ah eliminado con éxito') { portadas_path }
+    destroy!(notice: 'La portada se ha eliminado con éxito') { portadas_path }
   end
 
 end

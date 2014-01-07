@@ -20,7 +20,7 @@ Escenario: Editar slide
   Y uso la imagen "peru.jpg"
   Y uso el link "Prueba"
   Cuando presiono "Guardar"
-  Entonces debería ver "El slide se ah editado con éxito"
+  Entonces debería ver "El slide se ha editado con éxito"
 
 Escenario: Eliminar slide
   Dado que existe un slide
@@ -28,4 +28,4 @@ Escenario: Eliminar slide
   Y que estoy en la página inicial
   Cuando hago click en "Slide"
   Y hago click en "Eliminar"
-  Entonces debería ver "El slide se ah eliminado con éxito"
+  Entonces debería ver "El slide se ha eliminado con éxito"

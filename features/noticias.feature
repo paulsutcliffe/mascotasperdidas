@@ -28,4 +28,4 @@ Escenario: Eliminar noticia
   Y que estoy en la página inicial
   Cuando hago click en "Noticias"
   Y hago click en "Eliminar"
-  Entonces debería ver "La noticia se ah eliminado con éxito"
+  Entonces debería ver "La noticia se ha eliminado con éxito"

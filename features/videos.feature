@@ -19,7 +19,7 @@ Escenario: Editar video
   Y hago click en "Editar"
   Y uso el link "http://vimeo.com/51283882"
   Cuando presiono "Guardar"
-  Entonces debería ver "El video se ah editado con éxito"
+  Entonces debería ver "El video se ha editado con éxito"
 
 Escenario: Eliminar video
   Dado que existe un video
@@ -27,5 +27,5 @@ Escenario: Eliminar video
   Y que estoy en la página inicial
   Cuando hago click en "Video"
   Y hago click en "Eliminar"
-  Entonces debería ver "El video se ah eliminado con éxito"
+  Entonces debería ver "El video se ha eliminado con éxito"
 

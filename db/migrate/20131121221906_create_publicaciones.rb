@@ -5,7 +5,7 @@ class CreatePublicaciones < ActiveRecord::Migration
       t.string :animal
       t.string :raza
       t.string :nombre
-      t.float :recompensa, :null => false, :default => 0
+      t.string :recompensa
       t.date :fecha
       t.text :descripcion
       t.float :lat

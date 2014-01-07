@@ -15,10 +15,7 @@ class Publicacion < ActiveRecord::Base
   #geocoded_by :direccion
   #after_validation :geocode, :if => :direccion_changed?
 
-  validates :nombre, presence: true
-  validates :recompensa, numericality: true
   validates :descripcion, presence: true
-
 
   TIPOS = ['Perdido','Encontrado']
   SEXO = ['Macho','Hembra']

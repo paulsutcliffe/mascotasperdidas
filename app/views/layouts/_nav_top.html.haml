@@ -10,12 +10,12 @@
         = link_to 'Mis Publicaciones', mis_publicaciones_path
     - else
       %li.link.first
-        = link_to 'Registrate', new_usuario_registration_path
+        = link_to 'Regístrate', new_usuario_registration_path
       %li.link
         = link_to 'Ingresa', new_usuario_session_path
   %li
-    = link_to content_tag(:i, '', class: 'icon facebook'), ''
+    = link_to content_tag(:i, 'https://www.facebook.com/mascotasperdidasperuoficial', class: 'icon facebook'), ''
   %li
     = link_to content_tag(:i, '', class: 'icon vimeo'), ''
   %li
-    = link_to content_tag(:i, '', class: 'icon twitter'), ''
+    = link_to content_tag(:i, 'https://twitter.com/mascotasoficial', class: 'icon twitter'), ''

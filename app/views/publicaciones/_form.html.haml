@@ -25,7 +25,7 @@
   .form-group
     = f.label :recompensa, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :recompensa, class: 'form-control'
+      = f.text_field :recompensa, placeholder: '0.0', class: 'form-control'
   .form-group
     = f.label :fecha, class: 'col-sm-2 control-label'
     .col-sm-10
@@ -34,16 +34,15 @@
     = f.label :descripcion, class: 'col-sm-2 control-label'
     .col-sm-10
       = f.text_area :descripcion, class: 'form-control'
+  = f.fields_for :imagenes do |imagen_form|
+    .form-group
+      = f.label 'Imagen', class: 'col-sm-2 control-label'
+      .col-sm-8
+        = imagen_form.file_field :imagen, class: 'form-control'
+      .col-sm-2
+        = imagen_form.link_to_remove "Eliminar Imagen", class: 'btn btn-danger'
   .form-group
-    .col-sm-10
-      = f.fields_for :imagenes do |imagen_form|
-        .form-group
-          = f.label 'Imagen', class: 'col-sm-2 control-label'
-          .col-sm-8.nested-field
-            = imagen_form.file_field :imagen, class: 'form-control'
-          .col-sm2
-            = imagen_form.link_to_remove "Eliminar Imagen", class: 'btn btn-danger'
-      = f.link_to_add "Agregar Imagen", :imagenes, class: 'btn btn-primary'
+    = f.link_to_add "Agregar Imagen", :imagenes, class: 'btn btn-primary'
   .form-group
     = f.label :edad, class: 'col-sm-2 control-label'
     .col-sm-10

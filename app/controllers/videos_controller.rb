@@ -1,3 +1,4 @@
+#Coding: utf-8
 class VideosController < InheritedResources::Base
   before_filter :authenticate_admin!
 
@@ -24,14 +25,14 @@ class VideosController < InheritedResources::Base
   end
 
   def create
-    create! { videos_path }
+    create!(notice: "Video creado con éxito") { videos_path }
   end
 
   def update
-    update! { videos_path }
+    update!(notice: "El video se ah editado con éxito") { videos_path }
   end
 
   def destroy
-    destroy! { videos_path }
+    destroy!(notice: "El video se ah eliminado con éxito") { videos_path }
   end
 end

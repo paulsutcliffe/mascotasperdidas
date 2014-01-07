@@ -51,6 +51,6 @@ Mascotasperdidas::Application.routes.draw do
 
   resources :slides
 
-  root to: 'inicio#index'
+  root to: 'construccion#index'
 
 end

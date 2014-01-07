@@ -4,7 +4,7 @@ Característica: administracion de los usuarios de la web
 
 Escenario: Registrarse como usuario
   Dado que estoy en la página inicial
-  Y hago click en "Registrate"
+  Y hago click en "Regístrate"
   Y lleno el formulario con los datos del usuario
   Cuando presiono "Registrarse"
   Entonces debería ver "¡Bienvenido! Has sido identificado."

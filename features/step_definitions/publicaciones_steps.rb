@@ -15,7 +15,7 @@ end
 Cuando(/^agrego una imagen$/) do
   click_on "Agregar Imagen"
 
-  last_nested_fields = find('.fields').all('.col-sm-8').last
+  last_nested_fields = all('.nested-field').last
 
   within(last_nested_fields) do
     attach_file("Imagen", File.expand_path("features/support/chilidog.jpg"))

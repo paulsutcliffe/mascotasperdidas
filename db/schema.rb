@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(:version => 20131220194428) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "anuncios", :force => true do |t|
-    t.string   "link"
-    t.string   "imagen"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "ciudades", :force => true do |t|
     t.string   "nombre"
     t.integer  "provincia_id"
@@ -99,15 +92,6 @@ ActiveRecord::Schema.define(:version => 20131220194428) do
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "planes", :force => true do |t|
-    t.integer  "dias"
-    t.float    "precio"
-    t.text     "descripcion"
-    t.integer  "publicacion_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
   end
 
   create_table "portadas", :force => true do |t|

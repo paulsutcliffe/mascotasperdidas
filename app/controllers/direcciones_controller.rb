@@ -1,3 +1,4 @@
+#Coding: utf-8
 class DireccionesController < InheritedResources::Base
   before_filter :setup_publicacion
   def new
@@ -17,5 +18,9 @@ class DireccionesController < InheritedResources::Base
     else
       render :new
     end
+  end
+
+  def update
+    update!(notice: "La dirección se ha editado con éxito") { usuario_publicacion_path(@publicacion.usuario, @publicacion) }
   end
 end

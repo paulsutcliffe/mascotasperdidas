@@ -35,3 +35,26 @@ end
 Entonces(/^debería ver la imagen "(.*?)"$/) do |imagen|
   page.should have_xpath("//img[contains(@src, \"#{imagen}\")]")
 end
+
+Dado(/^que existe una publicación$/) do
+  Publicacion.create(animal: "perro",
+                     descripcion: "perro grande",
+                     edad: "6",
+                     fecha: "2013-10-29",
+                     nombre: "lulu",
+                     raza: "Boxer",
+                     recompensa: "700",
+                     sexo: "Macho",
+                     tipo: "Perdido",
+                     status: "Activa",
+                     usuario_id: 1).save!
+  Direccion.create(ciudad: "Lima",
+                   provincia: "Lima",
+                   distrito: "Ate Vitarte",
+                   calle: "Paracas",
+                   referencia: "Salamanca",
+                   usuario_id: 1,
+                   publicacion_id: 1).save!
+  Imagen.create(imagen: File.new("features/support/chilidog.jpg"),
+                publicacion_id: 1).save!
+end

@@ -1,3 +1,4 @@
+#Coding: utf-8
 class PublicacionesController < InheritedResources::Base
   before_filter :authenticate_usuario!, :except => [:index, :resultado_de_busqueda, :show]
   before_filter :setup_usuario
@@ -62,6 +63,10 @@ class PublicacionesController < InheritedResources::Base
   end
   def transaccion_realizada
 
+  end
+
+  def update
+    update!(notice: "La publicación se ha editado con éxito")
   end
 
 end

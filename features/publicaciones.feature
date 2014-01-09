@@ -28,4 +28,27 @@ Esquema del escenario: Crear una publicación
       | tipo       | animal | raza           | nombre   | recompensa | descripcion                 | edad    | imagen     | sexo  | mensaje                              |
       | Perdido    | Perro  | Boxer          | Goofy    | S/.200     | Tiene las orejas sin cortar | 12 años | perro1.jpg | Macho | Se ha Creado Satisfactoriamente      |
       | Encontrado | Perro  | Dogo Argentino |          |            | Tiene un ojo de vidrio      | 2 años  | perro2.jpg | Macho | Se ha Creado Satisfactoriamente      |
-      | Perdido    | Perro  | Chow Chow      | Firulais | $50        | Le falta una pata           | 6 años  | perro3.jpg | Macho | Se ha Creado Satisfactoriamente      |
+      | Perdido    | Perro  | Chow Chow      | Firulais | 50         | Le falta una pata           | 6 años  | perro3.jpg | Macho | Se ha Creado Satisfactoriamente      |
+
+
+Escenario: Editar una publicación
+  Dado que existe una publicación
+  Y que he iniciado sesión como usuario
+  Y que estoy en la página inicial
+  Cuando hago click en "Mis Publicaciones"
+  Y hago click en "Editar Publicación"
+  Y lleno "publicacion[nombre]" con "fido"
+  Y lleno "Recompensa" con "2000"
+  Cuando presiono "Guardar"
+  Entonces debería ver "La publicación se ha editado con éxito"
+
+Escenario: Editar la dirección de una publicación
+  Dado que existe una publicación
+  Y que he iniciado sesión como usuario
+  Y que estoy en la página inicial
+  Cuando hago click en "Mis Publicaciones"
+  Y hago click en "Editar Dirección"
+  Y lleno "Calle" con "Benavides"
+  Y lleno "Referencia" con "Surco"
+  Cuando presiono "Guardar"
+  Entonces debería ver "La dirección se ha editado con éxito"

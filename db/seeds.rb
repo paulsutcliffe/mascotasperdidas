@@ -11,9 +11,6 @@ FactoryGirl.create :admin
 
 FactoryGirl.create :usuario
 
-12.times do
-  FactoryGirl.create :anuncio
-end
 
 12.times do
   FactoryGirl.create :contacto

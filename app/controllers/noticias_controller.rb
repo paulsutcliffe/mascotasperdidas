@@ -1,4 +1,4 @@
-#coding: utf-8
+#Coding: utf-8
 class NoticiasController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [:index, :show]
   

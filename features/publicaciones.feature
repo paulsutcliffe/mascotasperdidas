@@ -52,3 +52,12 @@ Escenario: Editar la dirección de una publicación
   Y lleno "Referencia" con "Surco"
   Cuando presiono "Guardar"
   Entonces debería ver "La dirección se ha editado con éxito"
+
+Escenario: Eliminar una publicacion
+  Dado que he iniciado sesión como usuario
+  Y que existe una publicación
+  Y que estoy en la página inicial
+  Cuando hago click en "Mis Publicaciones"
+  Y hago click en "Eliminar"
+  Y click accept en la alerta "¿Estás Seguro?"
+  Entonces debería ver "La publicación se ha eliminado con éxito"

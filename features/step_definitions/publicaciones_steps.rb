@@ -58,3 +58,9 @@ Dado(/^que existe una publicación$/) do
   Imagen.create(imagen: File.new("features/support/chilidog.jpg"),
                 publicacion_id: 1).save!
 end
+Cuando(/^click (accept|dismiss) en la alerta "(.*?)"$/) do |action,text|
+  alert = page.driver.browser.switch_to.alert
+  alert.text.should eq(text)
+  alert.send(action)
+end
+

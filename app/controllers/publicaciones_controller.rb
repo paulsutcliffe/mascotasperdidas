@@ -69,4 +69,8 @@ class PublicacionesController < InheritedResources::Base
     update!(notice: "La publicación se ha editado con éxito")
   end
 
+  def destroy
+    destroy!(notice: "La publicación se ha eliminado con éxito") { mis_publicaciones_path }
+  end
+
 end

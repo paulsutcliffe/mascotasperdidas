@@ -38,7 +38,7 @@ end
 
 Dado(/^que existe una publicación$/) do
   Publicacion.create(animal: "perro",
-                     descripcion: "perro grande",
+                     descripcion: "perro grande color negro ojos grandes",
                      edad: "6",
                      fecha: "2013-10-29",
                      nombre: "lulu",

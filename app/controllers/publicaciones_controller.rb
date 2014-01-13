@@ -1,6 +1,6 @@
 #Coding: utf-8
 class PublicacionesController < InheritedResources::Base
-  before_filter :authenticate_usuario!, :except => [:index, :resultado_de_busqueda, :show]
+  before_filter :authenticate_usuario!, :except => [:index, :resultado_de_busqueda, :show, :sin_resultados]
   before_filter :setup_usuario
   def new
     @publicacion = Publicacion.new
@@ -39,11 +39,24 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def resultado_de_busqueda
-    @publicaciones = Publicacion.buscar(params[:busqueda])
-    if @publicaciones.class == Array
-      @publicaciones = Kaminari.paginate_array(@publicaciones).page(params[:page]).per(5)
+    if params[:busqueda].empty?
+      @publicaciones = Publicacion.where("tipo = ?", params[:tipo])
+      if @publicaciones.class == Array
+        @publicaciones = Kaminari.paginate_array(@publicaciones).page(params[:page]).per(5)
+      else
+        @publicaciones = @publicaciones.page(params[:page]).per(5)
+      end
     else
-      @publicaciones = @publicaciones.page(params[:page]).per(5)
+      @publicaciones = Publicacion.where("tipo = ?", params[:tipo]).buscar(params[:busqueda])
+      if @publicaciones.empty?
+        redirect_to action: 'sin_resultados', :busqueda => params[:busqueda]
+      else
+        if @publicaciones.class == Array
+          @publicaciones = Kaminari.paginate_array(@publicaciones).page(params[:page]).per(5)
+        else
+          @publicaciones = @publicaciones.page(params[:page]).per(5)
+        end
+      end
     end
   end
 
@@ -71,6 +84,10 @@ class PublicacionesController < InheritedResources::Base
 
   def destroy
     destroy!(notice: "La publicación se ha eliminado con éxito") { mis_publicaciones_path }
+  end
+
+  def sin_resultados
+    @busqueda = params[:busqueda]
   end
 
 end

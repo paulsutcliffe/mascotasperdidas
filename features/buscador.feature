@@ -1,19 +1,19 @@
 #language: es
-@javascript
 Característica: Buscador de la web
 
 Esquema del escenario: Busqueda en la web
-  Dado que existe una publicación
+  Dado que existen varias publicaciones
   Y que estoy en la página inicial
   Y lleno "busqueda" con "<busqueda>"
+  Y marco "<tipo>"
   Cuando presiono "BUSCAR"
   Entonces debería ver el resultado "<resultado>"
   Y debería ver el titulo "<titulo>"
 
   Ejemplos:
-      | busqueda                             | resultado | titulo                |
-      | lulu                                 | LULU      | Resultado de Búsqueda |
-      | Boxer                                | BOXER     | Resultado de Búsqueda |
-      | Macho                                | MACHO     | Resultado de Búsqueda |
-      |                                      |           | Resultado de Búsqueda |
-      | perro grande color negro ojos grandes| BOXER     | Resultado de Búsqueda |
+      | busqueda      | resultado | titulo                | tipo            |
+      | Fido          | Fido      | Resultado de Búsqueda | tipo_Perdido    |
+      | Dalmata       | Dalmata   | Resultado de Búsqueda | tipo_Encontrado |
+      | Macho         | Macho     | Resultado de Búsqueda | tipo_Perdido    |
+      | hola          |           | No se han encontrado mascotas relacionadas | tipo_Perdido    |
+      | 2 meses       | 2 meses   | Resultado de Búsqueda | tipo_Encontrado |

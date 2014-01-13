@@ -11,7 +11,7 @@
       .form-group.form-check.form-last
         .col-sm-8
           %label Perdido
-          = check_box_tag :tipo, 'Perdido'
+          = radio_button_tag :tipo, 'Perdido', true
       
           %label Encontrado
-          = check_box_tag :tipo, 'Encontrado'
+          = radio_button_tag :tipo, 'Encontrado'

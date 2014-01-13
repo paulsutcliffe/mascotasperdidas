@@ -1,0 +1,11 @@
+#region-publicaciones.container
+
+  .region
+    .region-title
+      %h1= page_title!('Sin Resultados')
+
+  .region
+    - if @busqueda
+      %p= 'No se han encontrado mascotas relacionadas a ' + @busqueda
+    - else
+      %p= 'Debes ingresar algún criterio de búsqueda'

@@ -10,6 +10,8 @@ Mascotasperdidas::Application.routes.draw do
 
   get "publicaciones/enviar_informacion"
 
+  get "publicaciones/sin_resultados"
+
   get '/videos/move', to: 'videos#move'
 
   match '/publicaciones/resultado-de-busqueda' => 'publicaciones#resultado_de_busqueda', via: :get, as: 'resultado_de_busqueda'

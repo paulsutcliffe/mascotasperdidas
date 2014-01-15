@@ -1,6 +1,6 @@
 class InicioController < ApplicationController
   def index
-    @publicaciones = Publicacion.limit(6)
+    @publicaciones = Publicacion.order("created_at ASC").having(:imagenes)
     @slides = Slide.all
     @testimonio = Testimonio.random
     @video = Video.order("position DESC").limit(1).first

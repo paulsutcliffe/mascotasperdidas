@@ -1,6 +1,9 @@
 es:
   app:
     name: Mascotas Perdidas
+  inicio:
+    index:
+      title: ÚNETE A MASCOTAS PERDIDAS Y ENCONTRARÁS A TU MASCOTA RÁPIDAMENTE
   date:
     abbr_day_names:
     - dom

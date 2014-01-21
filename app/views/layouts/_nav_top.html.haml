@@ -5,6 +5,8 @@
   - else
     - if current_usuario
       %li.link.first
+        = 'Hola, ' + current_usuario.name
+      %li.link
         = link_to 'Cerrar Sesión', destroy_usuario_session_path, :id => 'sign_out', :method => :delete
       %li.link
         = link_to 'Mis Publicaciones', mis_publicaciones_path

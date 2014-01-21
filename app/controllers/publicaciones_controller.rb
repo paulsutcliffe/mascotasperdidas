@@ -11,6 +11,15 @@ class PublicacionesController < InheritedResources::Base
   end
 
   def index
+    case params[:tipo]
+    when 'Perdido'
+      @titulo = 'Todas las mascotas perdidas'
+    when 'Encontrado'
+      @titulo = 'Todas las mascotas encontradas'
+    else
+      @titulo = 'Todas las mascotas'
+    end
+
     @publicaciones = params[:tipo] ? Publicacion.where("tipo = ?", params[:tipo]).page(params[:page]) : Publicacion.page(params[:page])
     respond_to do |format|
       format.html

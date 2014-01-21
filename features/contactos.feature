@@ -14,5 +14,5 @@ Escenario: Eliminar mensajes como administrador
   Y que estoy en la página inicial
   Cuando hago click en "Mensajes"
   Y hago click en "Eliminar"
-  Entonces debería ver "El mensaje se ha eliminado con éxito"
+  Entonces debería ver "Mensaje borrado con éxito."
 

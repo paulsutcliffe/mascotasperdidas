@@ -18,6 +18,9 @@ class ContactosController < InheritedResources::Base
   end
 
   def destroy
-    destroy!(notice: "El mensaje se ha eliminado con éxito") { contactos_path }
+    @contacto = Contacto.find(params[:id])
+    @contacto.destroy
+    flash[:notice] = "Mensaje borrado con éxito."
+    redirect_to contactos_path
   end
 end
